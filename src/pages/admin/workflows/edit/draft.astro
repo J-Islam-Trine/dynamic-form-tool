@@ -1,0 +1,38 @@
+---
+import FormSectionBlock from "../../../../components/form/formSectionBlock.astro";
+import MainLayout from "../../../../components/layouts/mainLayout.astro";
+import Table from "../../../../components/Table/table.astro";
+import { formWorkflowEdit } from "../../../../scripts/formCreateData"
+
+---
+
+<MainLayout>
+    
+{formWorkflowEdit.map((data)=>(
+
+        <FormSectionBlock
+                title={data.title}
+                titleCSS={data.titleCSS}
+                titleHidden={data.titleHidden}
+                
+                icon={data.icon}
+                buttonLink={data.buttonLink}
+                buttonName={data.buttonName}
+                buttonHidden={data.buttonHidden}
+                
+                SectionCSS={data.SectionCSS}
+                elementClass={data.elementClass}
+                
+                data={data.formInput}
+                
+                modalHidden={data.modalHidden}
+                modalId={data.modalId}
+                modalName={data.modalName}
+                titleModal={data.titleModal}
+                subtitleModal={data.subtitleModal}
+                modalButtonName={data.modalButtonName}
+                modalButtonLink={data.modalButtonLink}
+                
+            />
+    ))}
+</MainLayout>

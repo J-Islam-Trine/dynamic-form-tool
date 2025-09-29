@@ -1,0 +1,11 @@
+---
+import "../../styles/global.css"
+
+const { title, id } = Astro.props;
+---
+
+<h2 id={id} class="text-xl font-bold border-base-300 pb-3 mb-2 pt-4 scroll-mt-20 col-span-2">
+  <a href={`#${id}`} class="hover:underline transition-colors duration-200">
+    {title}
+  </a>
+</h2>

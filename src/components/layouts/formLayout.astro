@@ -1,0 +1,26 @@
+---
+const {formSectionLabel, formSectionData, nextFormSectionName} = Astro.props;
+console.log(formSectionData);
+import "../../styles/global.css";
+
+//Components
+import ViewTabs from "../progressBarStage/viewTabs.astro";
+import FormCreate from "./formCreate.astro";
+import FormInput from "../shared/formInput.astro";
+---
+
+<div class="mt-5">
+    <ViewTabs />
+    <span class="text-2xl font-semibold ">
+        {formSectionLabel}>
+</div>
+<FormCreate>
+    <div slot="container">
+        {console.log(formSectionData)}
+        <FormInput formData ={formSectionData}/>
+        <div class="">
+            <a href=`${nextFormSectionName}` class="flex justify-center mb-4 w-full">
+                <button class="btn btn-outline btn-primary w-1/2">Next</button>
+            </a>
+        </div>
+    </div>

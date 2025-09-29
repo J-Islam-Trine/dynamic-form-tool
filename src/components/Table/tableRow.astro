@@ -1,0 +1,125 @@
+---
+import IconxText from "../shared/iconxText.astro";
+import InputXicon from "../formElements/inputXicon.astro";
+import TextLink from "../shared/textLink.astro";
+import SelectField from "../formElements/SelectField.astro";
+
+const { data } = Astro.props;
+---
+
+<tr>
+  {
+    data.map((value) => {
+      const isObject = typeof value === "object";
+      const colSpan =
+        isObject && value.items ? Object.keys(value.items).length : 1;
+
+      return (
+        <td colspan={colSpan}>
+          {isObject && value.type === "button" && (
+            <div class="flex gap-2">
+              {Object.entries(value.items).map(([key, { link, style }]) => (
+                <a href={link} class={style}>
+                  {key}
+                </a>
+              ))}
+            </div>
+          )}
+
+          {isObject && value.type === "icon-text" && (
+            <div class="flex gap-4 items-center">
+              {Object.entries(value.items).map(
+                ([key, { iconName, iconColor, iconText, iconLink }]) => (
+                  <IconxText
+                    iconName={iconName}
+                    iconColor={iconColor}
+                    iconText={iconText}
+                    iconLink={iconLink}
+                  />
+                ),
+              )}
+            </div>
+          )}
+
+          {isObject && value.type === "checkbox" && (
+            <div>
+              <input
+                class={value.cls}
+                type="checkbox"
+                placeholder={value.placeholder}
+                checked={value.checked}
+                disabled={value.disabled}
+              />
+            </div>
+          )}
+
+          {isObject && value.type === "input" && (
+            <div>
+              {Object.entries(value.items).map(
+                ([
+                  key,
+                  {
+                    label,
+                    placeholder,
+                    type,
+                    typeClass,
+                    icon,
+                    disabled,
+                    options,
+                    selected,
+                  },
+                ]) => (
+                  <InputXicon
+                    label={label}
+                    placeholder={placeholder}
+                    type={type}
+                    typeClass={typeClass}
+                    icon={icon}
+                    active={disabled}
+                    options={options}
+                    selected={selected}
+                  />
+                ),
+              )}
+            </div>
+          )}
+
+          {isObject &&
+            value.type === "text-link" &&
+            Object.entries(value.items).map(([key, { text, link, style }]) => (
+              <TextLink text={text} link={link} style={style} />
+            ))}
+            
+            {isObject && value.type === "select" && (
+            <div>
+              {Object.entries(value.items).map(
+                ([
+                  key,
+                  {
+                    label,
+                    labelHidden = false,
+                    options = [],
+                    selected = "",
+                    selectClass = "select-bordered",
+                    disabled = false,
+                  },
+                ]) => (
+                  <SelectField
+                    label={label}
+                    labelHidden={labelHidden}
+                    options={options}
+                    selected={selected}
+                    selectClass={selectClass}
+                    disabled={disabled}
+                  />
+                ),
+              )}
+            </div>
+          )}
+
+          {!isObject && value}
+        </td>
+      );
+    })
+  }
+</tr>

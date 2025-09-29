@@ -1,0 +1,11 @@
+---
+import CheckBox from "../../formElements/checkBox/checkBox.astro";
+import CheckBoxField from "../../formElements/checkBox/checkBoxField.astro";
+import TextInput from "../../formElements/textInputGroup.astro";
+---
+
+<CheckBoxField checkBoxTitle=""> {/* checkBoxTitle is empty as the main title is in the header div */}
+    <CheckBox id="addressTypeOffice" name="communicationAddressType" value="office" legendText="Office address"/>
+    <CheckBox id="addressTypeResidential" name="communicationAddressType" value="residential" legendText="Residential address"/>
+    <CheckBox id="addressTypePermanent" name="communicationAddressType" value="permanent" legendText="Permanent address"/>
+  </CheckBoxField>

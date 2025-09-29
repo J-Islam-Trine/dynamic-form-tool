@@ -1,0 +1,73 @@
+---
+import "../../styles/global.css";
+import TwoColumnWithRightBar from "../../components/layouts/twoColumnWithRightBar.astro";
+import { clientLocalsSymbol } from "../../../node_modules/astro/dist/core/constants";
+import TwoColumnsFullWidth from "../layouts/twoColumnsFullWidth.astro";
+const { table } = Astro.props;
+---
+
+
+<div class="grid gap-2 grid-cols-[auto_250px]">
+    <!-- TABLE SECTION -->
+    <div class="border border-gray-300 shadow-md overflow-x-auto">
+      <table class="table">
+        <thead class="bg-base-200">
+          <tr>
+            {table.head.map((heading, index) => (
+              <th
+                class="px-4 py-2 font-semibold whitespace-nowrap overflow-visible"
+                style={`
+                  ${index === 0 ? "width: 70px;" : ""}
+                  ${index === 1 ? "width: 180px;" : ""}
+                  ${index === 2 ? "width: 140px;" : ""}
+                  ${index === 3 ? "width: 260px;" : ""}
+                  ${index === 4 ? "width: 120px;" : ""}
+                `}
+              >
+                {heading}
+              </th>
+            ))}
+          </tr>
+        </thead>
+
+        <tbody>
+          {table.body.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <td class="px-4 py-2 text-sm break-words">{cell}</td>
+              ))}
+                <td class="flex gap-2 items-center">
+                  <input type="range" min="0" max="25" value="0" class="range" step="1" />
+                  <p class="text-sm font-bold">2</p>
+                  </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SUMMARY BOX SECTION -->
+      <div class="bg-white border border-gray-300 shadow-md rounded-md p-4 text-sm">
+        <h2 class="text-base font-semibold mb-3">Summary</h2>
+
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-2 mb-3 rounded-md text-xs">
+          This scorecard contains <strong>7 manual rules</strong> which will change this score
+        </div>
+
+        <p class="text-sm mb-1"><strong>Final score</strong></p>
+        <span class="inline-block px-2 py-1 text-xs font-medium bg-red-200 text-red-800 rounded-full mb-2">
+          High Risk
+        </span>
+
+        <div class="text-center text-2xl font-bold text-gray-800">
+         <div>
+          {table.summary.finalScore}/{table.summary.totalScore}
+         </div>
+         
+      </div>
+      <button id="addAssessmentBtn" onclick="window.location.href = '/risk';" class="btn btn-md btn-primary w-full text-md my-4">Add Assessement</button>
+      
+    </div>
+
+
+  </div>

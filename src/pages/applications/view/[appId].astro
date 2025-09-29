@@ -1,0 +1,74 @@
+---
+//adding dynamic routes handler
+export function getStaticPaths() {
+  return [
+    { params: { appId: "11221", appId2: "1123" },
+}
+  ];
+}
+
+const { appId } = Astro.params;
+
+
+
+import Tab from "../../../components/shared/tab.astro";
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import ApplicationViewSelected from "../../../components/layouts/applicationViewSelected.astro";
+import Table from "../../../components/Table/table.astro";
+
+import { tableDocument, dataDemography, dataFinancial, dataNominee } from "../../../scripts/data";
+import ViewDemography from "../../../components/Demographics/viewDemography.astro";
+import ViewFinancial from "../../../components/Financial/viewFinancial.astro";
+import ViewNominee from "../../../components/Nominee/viewNominee.astro";
+import ViewChangeHistory from "../../../components/applicationView/viewChangeHistory.astro";
+---
+
+<MainLayout>
+    
+    <ApplicationViewSelected appNumber={appId}>
+        <Tab name="AppViewSelected" label="Demographic" checked>
+            <ViewDemography data={dataDemography} />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Sourcing Customer">
+            <span> Sourcing Customer </span>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Supplement">
+            <span> Supplement </span>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Spouse">
+            <span> Spouse </span>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Guarantor">
+            <span> Guarantor </span>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Nominee">
+            <ViewNominee data={dataNominee}/>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Financial">
+            <ViewFinancial data={dataFinancial}/>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Security">
+            <span> Security </span>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Products">
+            <span> Products </span>
+        </Tab>
+        
+        <Tab name="AppViewSelected" label="Document">
+            <Table table={tableDocument}/>
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Change History">
+            <ViewChangeHistory/>
+        </Tab>
+
+    </ApplicationViewSelected>
+</MainLayout>

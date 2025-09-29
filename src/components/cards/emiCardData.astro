@@ -1,0 +1,8 @@
+---
+const {label, data, cardClass, labelClass, dataClass} = Astro.props;
+---
+
+<div class={cardClass}>
+    <span class={labelClass}>{label}</span>
+    <span class={dataClass}>{data}</span>
+</div>

@@ -1,0 +1,71 @@
+---
+import Tab from "../../../components/shared/tab.astro";
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import ApplicationViewSelected from "../../../components/layouts/applicationViewSelected.astro";
+import Table from "../../../components/Table/table.astro";
+
+import {
+    tableDocument,
+    dataDemography,
+    dataFinancial,
+    dataNominee,
+} from "../../../scripts/data";
+import ViewDemography from "../../../components/Demographics/viewDemography.astro";
+import ViewFinancial from "../../../components/Financial/viewFinancial.astro";
+import ViewNominee from "../../../components/Nominee/viewNominee.astro";
+
+const appId = "APP2596";
+import { dataApplicationViewSecurity } from "../../../scripts/data";
+import SectionWrapper from "../../../components/applicationBlocks/sectionWrapper.astro";
+import Suppliment from "../../../components/viewSupplement/suppliment.astro";
+import Spouse from "../../../components/spouseComponent/spouse.astro";
+import Guarantor from "../../../components/Guarantor/guarantor.astro";
+import Products from "../../../components/products/products.astro";
+---
+
+<MainLayout>
+    <ApplicationViewSelected ApplicationId={appId}>
+        <Tab name="AppViewSelected" label="Demographic" checked >
+            <ViewDemography data={dataDemography} />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Supplement">
+            <Suppliment />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Spouse">
+            <Spouse />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Guarantor">
+            <Guarantor />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Nominee">
+            <ViewNominee data={dataNominee} />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Financial">
+            <ViewFinancial data={dataFinancial} />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Security" >
+            {
+                dataApplicationViewSecurity.map((section) => (
+                    <SectionWrapper
+                        title={section.title}
+                        sectionData={section}
+                    />
+                ))
+            }
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Products">
+            <Products />
+        </Tab>
+
+        <Tab name="AppViewSelected" label="Document">
+            <Table table={tableDocument} /> 
+        </Tab>
+    </ApplicationViewSelected>
+</MainLayout>

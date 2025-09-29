@@ -1,0 +1,55 @@
+---
+import InformationCard from "../components/cards/informationCard.astro";
+import Action from "../components/shared/action.astro";
+import DisplayCard from "../components/shared/displayCard.astro";
+import ThreeColumn from "../components/layouts/threeColumn.astro";
+
+
+const {applicationData, actionProperties, dataDemography, viewTitle} = Astro.props;
+---
+
+<ThreeColumn>
+        <div class="flex flex-col gap-2 p-2" slot="important">
+            {
+                applicationData.map((app, index) => (
+                    <InformationCard
+                        key={index}
+                        title={app.title}
+                        value={app.value}
+                        iconName={app.iconName}
+                        iconColor={app.iconColor}
+                        bgColor={app.bgColor}
+                        textOrientation={app.textOrientation}
+                        textColor={app.textColor}
+                    />
+                ))
+            }
+        </div>
+
+        <div class="" slot="information">
+            <span class="text-xl font-semibold">{viewTitle}</span>
+            <div class="flex flex-col gap-5">
+                {
+                    dataDemography.map((data) => (
+                        <DisplayCard
+                            title={data.title}
+                            content={data.content}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-2" slot="action">
+            {
+                actionProperties.map((action) => (
+                    <Action
+                        label={action.label}
+                        link={action.link}
+                        id={action.id}
+                        btnType={action.btntype}
+                    />
+                ))
+            }
+        </div>
+    </ThreeColumn>

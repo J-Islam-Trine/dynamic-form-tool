@@ -1,0 +1,86 @@
+---
+import DocumentList from '../components/documentView/DocumentList.astro';
+import DocumentContent from '../components/documentView/DocumentContent.astro';
+
+interface Document {
+  filename: string;
+  title: string;
+  date: string;
+}
+
+// List of available documents
+const documents: Document[] = [
+  { filename: 'python.pdf', title: 'Invoices to pay 09/20.pdf', date: '26 ago' },
+  { filename: 'javascript.pdf', title: 'Sales Performance.docx', date: '26 ago' },
+  { filename: 'java.pdf', title: 'New Loads April 2020.pdf', date: '24 ago' },
+  { filename: 'THM.pdf', title: 'Sales Draft 2.pdf', date: '24 ago' },
+  { filename: 'react.pdf', title: 'Agent Fees.docx', date: '24 ago' },
+  { filename: 'Blockchain.pdf', title: 'DPI Campaign 2019.pdf', date: '24 ago' }
+];
+
+// Get ?document= from URL
+const params = new URL(Astro.request.url).searchParams;
+const currentDoc = params.get('document');
+const activeDocument = documents.find(doc => doc.filename === currentDoc) ?? documents[0];
+console.log(currentDoc)
+console.log(activeDocument)
+console.log(urlParams)
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Viewer</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #333;
+      }
+
+      .document-viewer {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      @media (max-width: 768px) {
+        .document-viewer {
+          flex-direction: column;
+          height: auto;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="document-viewer">
+      <DocumentList 
+        documents={documents} 
+        currentDocument={activeDocument.filename} 
+      />
+      <DocumentContent 
+        document={activeDocument}
+        clientInfo={{
+          name: "Dpo Invest 64May™$",
+          number: "5234"
+        }}
+      />
+    </div>
+
+    <!-- Redirect to default PDF only if no document param is present -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      console.log(urlParams.toString());
+
+      if (!urlParams.has('document')) {
+        urlParams.set('document', 'python.pdf');
+        const newUrl = ${window.location.pathname}?${urlParams.toString()};
+        history.replaceState(null, '', newUrl);
+        window.location.reload(); 
+      }
+    </script>
+  </body>
+</html>

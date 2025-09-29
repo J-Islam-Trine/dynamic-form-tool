@@ -1,0 +1,54 @@
+---
+const { label, percent } = Astro.props;
+---
+
+<div class="status-row">
+  <div class="label">{label}</div>
+  <div class="bar-row">
+    <div class="bar">
+      <div class="fill" style={`width: ${percent}%`}></div>
+    </div>
+    <div class="percent">{percent}%</div>
+  </div>
+</div>
+
+<style>
+  .status-row {
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 0.25rem;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bar {
+    flex: 1;
+    height: 5px;
+    background-color: #e6f0ff;
+    border-radius: 4px;
+  }
+
+  .fill {
+    height: 100%;
+    background-color: #2196f3;
+    border-radius: 4px;
+  }
+
+  .percent {
+    font-size: 0.75rem;
+    color: #2196f3;
+    border: 1px solid #2196f3;
+    padding: 2px 6px;
+    border-radius: 4px;
+    min-width: 35px;
+    text-align: center;
+  }
+</style>

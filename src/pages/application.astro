@@ -1,0 +1,20 @@
+---
+import ApplicationContainer from "../components/applicationBlocks/applicationContainer.astro";
+import ApplicationTitle from "../components/applicationBlocks/applicationTitle.astro";
+import MainLayout from "../components/layouts/mainLayout.astro";
+import FourColumn from "../components/layouts/fourColumn.astro";
+import ProgressCard from "../components/shared/progressCard.astro";
+import {breadApp, cardDataAppContainer} from "../scripts/data.js"
+---
+
+<MainLayout>
+
+    <ApplicationTitle breadcrumbs = {breadApp}/>
+    <FourColumn>
+    <div slot="main">
+        <ApplicationContainer/>
+    </div>
+    <div slot="sidebar">
+        <ProgressCard/>
+    </div>
+</FourColumn>

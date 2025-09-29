@@ -1,0 +1,31 @@
+---
+// src/pages/index.astro
+import MainLayout from "../components/layouts/mainLayout.astro";
+import StatCard from "../components/home/StatCard.astro"
+import AreaChart from "../components/charts/areaChart.astro";
+import DonutChart from "../components/charts/donutChart.astro";
+import AppCompletionStat from "../appStatus/AppCompletionStat.astro";
+import ApplicationView from "../components/DashInfoView/ApplicationView.astro";
+import EmploymentInfo from "../components/viewApplication/employmentInformation.astro";
+import ViewTabs from "../components/progressBarStage/viewTabs.astro";
+
+
+import '../styles/global.css';
+---
+
+<MainLayout username="Aditya Kumar" role="Relationship Officer" avatarImageUrl="https://i.pravatar.cc/150?img=60">
+  <StatCard />
+
+  <div class="flex flex-col md:flex-row gap-6 mt-6">
+    <div class="flex-1">
+      <AreaChart />
+    </div>
+    <div class="flex-1">
+      <DonutChart />
+    </div>
+  </div>
+
+  <ViewTabs />
+  
+
+</MainLayout>

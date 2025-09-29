@@ -1,0 +1,36 @@
+---
+//adding dynamic routes handler
+export function getStaticPaths() {
+  return [
+    { params: { appId: "11221"},
+}
+  ];
+}
+
+const { appId } = Astro.params;
+
+import "../../../styles/global.css"
+
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import ContentHeaderWithoutButton from "../../../components/components/contentHeaderWithoutButton.astro";
+import MainTable from "../../../components/crgCreditScoring/MainTable.astro";
+import { crgCreditScoring } from "../../../scripts/data";
+---
+
+<MainLayout username="Musfiqa Ahmed" role="Retail Risk Officer" avatarImageUrl="https://i.pravatar.cc/150?img=43">
+    <div class="flex flex-col">
+      <!-- <ApplicationTitle breadcrumbs={breadAppSelected} /> -->
+      <ContentHeaderWithoutButton
+          label="Loan Application"
+          appNumber={appId}
+          date="May 25, 2025"
+          branch="Mirpur 10"
+          handler="Musfiq"
+      />
+
+
+        <MainTable table={crgCreditScoring} />
+
+    </div>
+</MainLayout>
+

@@ -1,0 +1,30 @@
+---
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import DisplayCard from "../shared/displayCard2.astro";
+import FormDemographic from "./formDemographic.astro";
+import DemographicAlternateDesign from "./demographic-alternate design.astro";
+
+const {data} = Astro.props;
+---
+
+<!-- <h1>Design 1</h1> -->
+<TwoColumnsFullWidth>
+        {
+            data.map((dem, index) => (
+                <DisplayCard
+                    key={index}
+                    title={dem.title}
+                    content={dem.content}
+                />
+            ))
+        }
+
+</TwoColumnsFullWidth>
+
+<!-- <h1>Design 2</h1>
+<FormDemographic/>
+
+<h3 class="font-bold text-xl">Design 3</h3>
+<DemographicAlternateDesign/ data={data}/> -->
+
+

@@ -1,0 +1,43 @@
+---
+
+---
+
+<script>
+// src/scripts/initChart.js
+import Chart from 'chart.js/auto';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('myChart');
+
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'line', // Area charts are created using the 'line' type with fill enabled
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'My Area Dataset',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          fill: true, // This is the key property for creating an area chart
+          borderColor: 'rgb(93, 95, 239)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        // Add any specific chart options here
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
+
+});
+
+</script>
+<div  class="max-w-screen">
+  <canvas id="myChart"></canvas>
+</div>
+

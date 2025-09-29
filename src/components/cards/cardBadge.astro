@@ -1,0 +1,22 @@
+---
+const {
+    notification = "9",
+    content = "Messages",
+    conStyle = "border-green-400",
+    conLink = "#",
+    badgeStyle = "badge-success",
+} = Astro.props;
+---
+
+<div class=`w-fit`>
+    <div class= `${conStyle} indicator w-full min-w-[250px] min-h-[100px] rounded-lg`>
+        <span class=`border-2 border-white font-semibold indicator-item badge ${badgeStyle}`>
+            {notification}
+        </span>
+        <div class=`w-full flex items-center justify-center `>
+            <a class=`text-xl font-semibold` href=`${conLink}`>
+                {content}
+            </a>
+        </div>
+    </div>
+</div>

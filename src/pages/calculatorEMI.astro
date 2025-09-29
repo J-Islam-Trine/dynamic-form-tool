@@ -1,0 +1,19 @@
+---
+import EmiCard from "../components/cards/emiCard.astro";
+import EmiCardInputs from "../components/cards/emiCardInputs.astro";
+import EmiCalculator from "../components/layouts/emiCalculator.astro";
+import MainLayout from "../components/layouts/mainLayout.astro";
+
+---
+
+<MainLayout>
+<EmiCalculator>
+    <div slot="inputs">
+        <EmiCardInputs/>
+    </div>
+    <div slot="result">
+        <EmiCard/>
+
+    </div>
+</EmiCalculator>
+</MainLayout>

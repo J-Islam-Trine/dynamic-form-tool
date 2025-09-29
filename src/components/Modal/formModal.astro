@@ -1,0 +1,38 @@
+---
+// component
+import FormSectionBlock from "../form/formSectionBlock.astro";
+//data
+const { modalId = "", modalButtonName="Button", modalButtonLink="#", modalData = [], titleModal } = Astro.props;
+---
+
+<dialog id={modalId} class="modal">
+    <div class="modal-box ">
+        <h3 class="text-lg font-bold">{titleModal}</h3>
+        
+        <div class="modal-action">
+            <form method="dialog" class="w-full flex flex-row justify-between ">
+                <button class="btn btn-error text-white">Close</button>
+                <a 
+                class="btn btn-primary"
+                href={modalButtonLink}
+                >{modalButtonName}
+                </a>
+            </form>
+        </div>
+         <div>
+        {
+            modalData.map((data) => (
+                <FormSectionBlock
+                    titleHidden={data.titleHidden}
+                    data={data.formInput}
+                    SectionCSS={data.SectionCSS}
+                    buttonHidden={data.buttonHidden}
+                    modalHidden={data.modalHidden}
+                    modalName={data.modalName}
+                    modalId={data.modalId}
+                />
+            ))
+        }
+        </div>
+    </div>
+</dialog>

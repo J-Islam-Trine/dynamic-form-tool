@@ -1,0 +1,31 @@
+---
+import "../../styles/global.css";
+import { Icon } from "astro-icon/components";
+const {
+    Content = "This is default main component",
+    Title = "Default",
+    icon = "mdi:tick-circle-outline",
+    iconColor = "text-green-400",
+    bgColor = "bg-green-100",
+    orientation = "flex-row",
+    link = "#",
+    text = "text-black",
+} = Astro.props;
+---
+
+<div
+    class=`card flex ${orientation} w-full card-xs text-black border-2 border-slate-200 rounded-xl overflow-hidden shadow-lg`
+>
+    <div class="card-head flex items-center justify-center py-5">
+        <div class="h-16 mb-2">
+            <a href=`${link}`>
+                <Icon class=`w-full h-full ${iconColor}` name={icon} />
+            </a>
+        </div>
+    </div>
+
+    <div class=`card-body ${bgColor}`>
+        <h5 class=`${text} text-lg font-semibold text-center flex justify-center items-center`>{Title}</h5>
+        <p class="text-lg font-normal">{Content}</p>
+    </div>
+</div>

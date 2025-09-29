@@ -1,0 +1,14 @@
+---
+import "../../styles/global.css"
+
+const {label, id, placeholder} = Astro.props
+---
+
+<fieldset class="fieldset">
+  <legend  class="fieldset-legend font-normal">{label}
+  </legend>
+
+<input type="email" placeholder={placeholder} id={id} class="input input-bordered w-full" />
+</div>
+
+

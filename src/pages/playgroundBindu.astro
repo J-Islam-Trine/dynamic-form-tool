@@ -1,0 +1,56 @@
+---
+import MainLayout from "../components/layouts/mainLayout.astro";
+
+---
+<MainLayout>
+    <div class="overflow-x-auto shadow rounded-lg bg-white p-4">
+      <table class="table table-zebra w-full text-sm">
+        <thead class="bg-base-200 text-xs uppercase text-gray-600">
+          <tr>
+            <th>Emp ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Branch</th>
+            <th>LOS Role</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EBL-2053</td>
+            <td>Mehedi Hasan</td>
+            <td>Retail Credit</td>
+            <td>Credit Analyst</td>
+            <td>Head Office</td>
+            <td>Risk Reviewer</td>
+            <td>mehedi.h@ebl.com</td>
+            <td>+880 1700 123456</td>
+            <td><span class="badge badge-success">Active</span></td>
+            <td class="flex gap-2">
+              <button class="btn btn-xs btn-info">View</button>
+              <button class="btn btn-xs btn-outline">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>EBL-2099</td>
+            <td>Shamima Islam</td>
+            <td>Corporate Loans</td>
+            <td>Senior Loan Officer</td>
+            <td>Gulshan Branch</td>
+            <td>Initiator</td>
+            <td>shamima.i@ebl.com</td>
+            <td>+880 1812 567890</td>
+            <td><span class="badge badge-warning">On Leave</span></td>
+            <td class="flex gap-2">
+              <button class="btn btn-xs btn-info">View</button>
+              <button class="btn btn-xs btn-outline">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</MainLayout>

@@ -1,0 +1,44 @@
+---
+//Layouts
+import MainNSC from "../../components/layouts/mainNSC.astro";
+import SideBarWithSections from "../../components/shared/sideBarWithSections.astro";
+
+//components
+import Table from "../../components/Table/table.astro";
+import CardBadge from "../../components/cards/cardBadge.astro";
+
+import Breadcrumbs from "../../components/shared/breadcrumbs.astro";
+
+//data
+import {breadSalesHomeData} from "../../data/breadcrumbs";
+import { sales as salesSidebar } from "../../data/sales/sidebar"
+import { Applications as salesApplicationData} from "../../data/sales/dashboard/table.js"
+import { InformationCardData } from "../../scripts/buData";
+
+---
+<MainNSC username="Aditya Kumar" role="Relationship Officer" avatarImageUrl="https://i.pravatar.cc/150?img=55">
+<div class="" slot="sidebar">
+    <SideBarWithSections sidebar={salesSidebar}/>
+</div>
+<div class="" slot="content">
+    <Breadcrumbs breadcrumbs = {breadSalesHomeData}/>
+<div class="w-full flex flex-wrap flex-col md:flex-row gap-2 lg:gap-6">
+                {
+                    InformationCardData.map((inData) => (
+                        <CardBadge 
+                        notification={inData.notification}
+                        content = {inData.content}
+                        badgeStyle = {inData.badgeStyle}
+                        conStyle = {inData.conStyle}
+                        conLink = {inData.conLink}
+                        />
+                    ))
+                }
+            </div>
+
+            <div>
+                <Table table={salesApplicationData}/>
+            </div>
+</div>
+</MainNSC>
+

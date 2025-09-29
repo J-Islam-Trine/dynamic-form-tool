@@ -1,0 +1,17 @@
+---
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import DisplayCard from "../shared/displayCard.astro";
+const {data} = Astro.props;
+---
+
+<TwoColumnsFullWidth>
+        {
+            data.map((dem, index) => (
+                <DisplayCard
+                    key={index}
+                    title={dem.title}
+                    content={dem.content}
+                />
+            ))
+        }
+</TwoColumnsFullWidth>

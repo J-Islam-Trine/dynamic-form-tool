@@ -1,0 +1,133 @@
+---
+const { title, content, media, logo } = Astro.props;
+
+function isValidImage(image) {
+  return typeof image === 'string' && image.trim() !== '' && image.toLowerCase() !== 'null';
+}
+---
+<div class="flex flex-col gap-5 h-full rounded-xl p-4 border border-slate-200 bg-white shadow-sm">
+  <!-- Title -->
+  {title && (
+    <span class="font-semibold border-b-2 border-slate-300 pb-2 flex items-center gap-2 text-lg">
+      {logo && <img src={logo} alt="logo" class="h-6 w-auto" />}
+      {title}
+    </span>
+  )}
+
+  <!-- Content Layer -->
+  {Array.isArray(content) && (
+    <div class="grid grid-cols-2 gap-y-2 text-sm">
+      {content.map((con) => (
+        <>
+          <span class="font-medium text-slate-700">{con.label}</span>
+          <span class="text-slate-900">{con.value}</span>
+        </>
+      ))}
+    </div>
+  )}
+
+  <!-- Media Layer -->
+  {media && (
+    <div class="mt-4 flex flex-col items-start gap-6">
+      {/* Handle media.image (array or single) */}
+      {media.image && Array.isArray(media.image) && (
+        <div class="flex flex-col items-start text-left">
+          <span class="font-semibold mb-1">Photo</span>
+          <div class="flex gap-4">
+            {media.image.map((imgUrl) => (
+              isValidImage(imgUrl) && (
+                <img
+                  src={imgUrl}
+                  alt="Photo"
+                  class="w-28 h-auto rounded-lg border border-slate-300 shadow-sm"
+                />
+              )
+            ))}
+          </div>
+        </div>
+      )}
+
+      {media.image && !Array.isArray(media.image) && isValidImage(media.image) && (
+        <div class="flex flex-col items-start text-left">
+          <span class="font-semibold mb-1">Photo</span>
+          <img
+            src={media.image}
+            alt="Photo"
+            class="w-28 h-auto rounded-lg border border-slate-300 shadow-sm"
+          />
+        </div>
+      )}
+
+      {/* Handle nidCopy */}
+      {media.nidCopy && Array.isArray(media.nidCopy) && (
+        <div class="flex flex-col items-start text-left">
+          <span class="font-semibold mb-1">NID Copy</span>
+          <div class="flex gap-4">
+            {media.nidCopy.map((imgUrl) => (
+              isValidImage(imgUrl) && (
+                <img
+                  src={imgUrl}
+                  alt="NID Copy"
+                  class="w-28 h-auto rounded-lg border border-slate-300 shadow-sm"
+                />
+              )
+            ))}
+          </div>
+        </div>
+      )}
+
+      {media.nidCopy && !Array.isArray(media.nidCopy) && isValidImage(media.nidCopy) && (
+        <div class="flex flex-col items-start text-left">
+          <span class="font-semibold mb-1">NID Copy</span>
+          <img
+            src={media.nidCopy}
+            alt="NID Copy"
+            class="w-28 h-auto rounded-lg border border-slate-300 shadow-sm"
+          />
+        </div>
+      )}
+
+      {/* Handle marriageCertificate (single image assumed) */}
+      {media.marriageCertificate && isValidImage(media.marriageCertificate) && (
+        <div class="flex flex-col items-start text-left">
+          <span class="font-semibold mb-1">Marriage Certificate</span>
+          <img
+            src={media.marriageCertificate}
+            alt="Marriage Certificate"
+            class="w-28 h-auto rounded-lg border border-slate-300 shadow-sm"
+          />
+        </div>
+      )}
+
+      {/* Handle signature */}
+      {media.signature && isValidImage(media.signature) && (
+        <div class="flex flex-col items-start text-left">
+          <span class="font-semibold mb-1">Signature</span>
+          <img
+            src={media.signature}
+            alt="Signature"
+            class="w-32 h-auto border border-slate-300"
+          />
+        </div>
+      )}
+
+      {/* Fallback: dynamically render any other unknown media keys */}
+      {Object.entries(media)
+        .filter(([key]) => !['image', 'nidCopy', 'marriageCertificate', 'signature'].includes(key))
+        .map(([label, url]) => (
+          isValidImage(url) && (
+            <div class="flex flex-col items-start text-left" key={label}>
+              <span class="font-semibold capitalize mb-1">
+                {label.replace(/([A-Z])/g, ' $1')}
+              </span>
+              <img
+                src={url}
+                alt={label}
+                class="w-28 h-auto rounded-lg border border-slate-300 shadow-sm"
+              />
+            </div>
+          )
+        ))}
+    </div>
+  )}
+</div>

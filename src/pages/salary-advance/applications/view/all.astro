@@ -1,0 +1,19 @@
+---
+//Layouts
+import MainLayout from "../../../../components/layouts/mainLayout.astro";
+
+//components
+import ApplicationView from "../../../../components/applicationView/ApplicationView.astro";
+
+//data
+import {salaryAdvanceTableData} from "../../../../scripts/data.js";
+import {mainApplicationTableData} from "../../../../scripts/data.js";
+
+
+---
+
+<MainLayout username="Ahmed Hanif" role="Operational Executive">
+    {console.log('EX', mainApplicationTableData)}
+    <ApplicationView applications={salaryAdvanceTableData}/>
+</MainLayout> 
+

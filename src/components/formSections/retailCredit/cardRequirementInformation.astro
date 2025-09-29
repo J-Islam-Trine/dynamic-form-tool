@@ -1,0 +1,15 @@
+---
+import CheckBoxField from "../../formElements/checkBox/checkBoxField.astro";
+import CheckBox from "../../formElements/checkBox/checkBox.astro";
+import TextInput from "../../formElements/textInputGroup.astro";
+---
+
+<CheckBoxField checkBoxTitle="Credit Card Type">
+    <CheckBox id="cardTypeBlue" name="creditCardType" value="blue" legendText="Blue"></CheckBox>
+    <CheckBox id="cardTypeGold" name="creditCardType" value="gold" legendText="Gold"></CheckBox>
+    <CheckBox id="cardTypePlatinum" name="creditCardType" value="platinum" legendText="Platinum"></CheckBox>
+    <CheckBox id="cardTypeCoBrand" name="creditCardType" value="coBrand" legendText="Co-Brand"></CheckBox>
+    <TextInput id="coBrandSpecify" placeholder="Type here" />
+    <CheckBox id="cardTypeOther" name="creditCardType" value="other" legendText="Other"></CheckBox>
+    <TextInput id="otherCardTypeSpecify" placeholder="Type here" ></CheckBox>
+  </CheckBoxField>

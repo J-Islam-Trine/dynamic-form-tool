@@ -1,0 +1,45 @@
+---
+const { username="Jane Doe", role="Admin", avatarImageUrl="https://i.pravatar.cc/150?img=52" } = Astro.props;
+
+import '../../styles/global.css';
+
+import { Icon } from "astro-icon/components";
+import Sidebar from '../../components/shared/sidebar.astro';
+import Navbar from '../../components/shared/navbar.astro';
+import { complexDataSideBar, dataSidebar } from '../../scripts/data';
+import SideBarWithSections from '../shared/sideBarWithSections.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Sidebar</title>
+</head>
+<body class="h-screen">
+  <!-- Top Navbar -->
+  <header class="sticky top-0 z-20">
+    <Navbar userName={username} role={role} avatarImageUrl={avatarImageUrl}/>
+  </header>
+
+      <!-- Main Page Content -->
+      <main class="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-1">
+            <!-- <Sidebar data={dataSidebar}/> -->
+            <SideBarWithSections sidebar={complexDataSideBar}/>
+             <div class="overflow-x-auto">
+               <slot />
+
+             </div>
+
+      </main>
+    </div>
+
+    <!-- Sidebar (responsive)
+    <div class="drawer-side top-10">
+      <label for="main-drawer" class="drawer-overlay"></label>
+      <Sidebar data={dataSidebar} />
+    </div> -->
+  </div>
+</body>
+</html>

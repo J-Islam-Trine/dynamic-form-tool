@@ -1,0 +1,26 @@
+---
+import TwoColumnsFullWidth from "../../../components/layouts/twoColumnsFullWidth.astro";
+
+const { data = [] } = Astro.props;
+---
+
+<div class="px-4">
+  <h3 class="font-semibold text-2xl p-2 mb-2 border-b-2 border-black-400">
+    Employee Information
+  </h3>
+  <TwoColumnsFullWidth>
+    {data.map(level => (
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">{level.title}</legend>
+        <label class="input font-bold w-3/4">
+          No. of Permanent Employees
+          <input type="text" class="grow text-right" placeholder="Type here" />
+        </label>
+        <label class="input font-bold w-3/4">
+          No. of Contractual Staffs
+          <input type="text" class="grow text-right" placeholder="Type here" />
+        </label>
+      </fieldset>
+    ))}
+  </TwoColumnsFullWidth>
+</div>

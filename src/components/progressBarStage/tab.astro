@@ -1,0 +1,26 @@
+---
+const { name, label, checked = false, id, isLast = false } = Astro.props;
+---
+
+<div class="relative flex items-center">
+  <input
+    type="radio"
+    id={id}
+    name={name}
+    class="peer hidden"
+    checked={checked}
+  />
+
+  <label
+    for={id}
+    class="px-4 py-2 text-sm font-semibold rounded-3xl border cursor-pointer transition
+      peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600
+      bg-white text-blue-600 border-blue-300 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600"
+  >
+    {label}
+  </label>
+
+  { !isLast && (
+    <span class="w-4 h-0.5 bg-blue-300 mx-1"></span>
+  )}
+</div>

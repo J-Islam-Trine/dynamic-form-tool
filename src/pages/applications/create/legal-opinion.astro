@@ -1,0 +1,26 @@
+---
+import FormInput from "../../../components/shared/formInput.astro";
+import FormProgressWidgets from "../../../components/form/formProgressWidgets.astro";
+import FormCreate from "../../../components/layouts/formCreate.astro";
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import { formInputLegalOpinion } from "../../../scripts/data"; 
+import { progressLegalOpinion } from "../../../scripts/progressData";
+---
+
+<MainLayout>
+  <div class="mt-5">
+    <span class="text-2xl font-semibold">
+      Legal Opinion
+    </span>
+  </div>
+
+  <FormCreate>
+    <div slot="container">
+      <FormInput formData={formInputLegalOpinion} />
+    </div>
+
+    <div slot="sidebar">
+      <FormProgressWidgets progress={progressLegalOpinion} />
+    </div>
+  </FormCreate>
+</MainLayout>

@@ -1,0 +1,22 @@
+---
+import CardDefault from "../shared/cardDefault.astro";
+
+import { cardDataNewApp } from "../../scripts/data";
+---
+
+<div class="grid grid-cols-3 gap-x-2 gap-y-5">
+    {
+                cardDataNewApp.map((card) => (
+                    <CardDefault
+                        Title={card.Title}
+                        Content={card.Content}
+                        icon={card.icon}
+                        iconColor={card.iconColor}
+                        bgColor={card.bgColor}
+                        orientation={card.orientation}
+                        link = {card.link}
+                        text = {card.text}
+                    />
+                ))
+            }
+</div>

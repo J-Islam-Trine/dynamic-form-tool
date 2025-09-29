@@ -1,0 +1,66 @@
+---
+//variables
+const tabName = "islamic-retail-loan-application"
+
+//layouts
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import TwoColumnWithRightBar from "../../../components/layouts/twoColumnWithRightBar.astro";
+import TwoColumnTabContent from "../../../components/layouts/tabContents/twoColumnTabContent.astro";
+import SingleColumnTabContent from "../../../components/layouts/tabContents/singleColumnTabContent.astro";
+
+//components
+import TabContainer from "../../../components/shared/tabContainer.astro";
+import FormProgressWidgets from "../../../components/form/formProgressWidgets.astro";
+import FormSection from "../../../components/form/formSection.astro";
+import Tab from "../../../components/shared/tab.astro";
+
+//form sections
+import SourcingInformation from "../../../components/formSections/retailCredit/sourcingInformation.astro";
+import CardRequirementInformation from "../../../components/formSections/retailCredit/cardRequirementInformation.astro";
+import AboutYourself from "../../../components/formSections/shared/aboutYourself.astro";
+import ResidencyInformation from "../../../components/formSections/shared/residencyInformation.astro";
+import WorkInformation from "../../../components/formSections/shared/workInformation.astro";
+import CommunicationInformation from "../../../components/formSections/shared/communicationInformation.astro";
+import IncomeInformation from "../../../components/formSections/shared/incomeInformation.astro";
+---
+
+<MainLayout>
+    <TwoColumnWithRightBar>
+        <TabContainer>
+            <Tab name={tabName} label="Application  Form" checked="true">
+                <FormSection title="">
+                    <SourcingInformation />
+                </FormSection>
+
+                <FormSection title="I want to apply for...">
+                    <CardRequirementInformation />
+                </FormSection>
+
+
+                <FormSection title="About Yourself">
+                    <AboutYourself />
+                </FormSection>  
+
+                <FormSection title="About Your Residence">
+                    <ResidencyInformation />
+                </FormSection>  
+
+                <FormSection title="About Your Work">
+                    <WorkInformation />
+                </FormSection>  
+                
+                <FormSection title="CORRESPONDING OR COMMUNICATION ADDRESS (SELECT ANY ONE) *">
+                    <CommunicationInformation />
+                </FormSection>  
+
+                <FormSection title="CORRESPONDING OR COMMUNICATION ADDRESS (SELECT ANY ONE) *">
+                    <IncomeInformation />
+                </FormSection>  
+
+            </Tab>
+
+        </TabContainer>
+            
+            <FormProgressWidgets />
+    </TwoColumnWithRightBar>
+</MainLayout>

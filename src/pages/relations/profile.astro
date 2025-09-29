@@ -1,0 +1,18 @@
+---
+import MainNSC from "../../components/layouts/mainNSC.astro";
+import ProfileBU from "../../components/employeeProfile/profileBU.astro";
+import SideBarWithSections from "../../components/shared/sideBarWithSections.astro";
+import { buSidebarData} from "../../scripts/sidebarData";
+import { buData} from "../../scripts/profileData";
+import Breadcrumbs from "../../components/shared/breadcrumbs.astro";
+import { breadBUProfileData } from "../../scripts/breadCrumbsData";
+
+---
+<MainNSC>
+<div class="" slot="sidebar">
+    <SideBarWithSections sidebar={buSidebarData}/>
+</div>
+<div class="" slot="content">
+    <Breadcrumbs breadcrumbs = {breadBUProfileData}/>
+<ProfileBU user = {buData}/>
+</MainNSC>

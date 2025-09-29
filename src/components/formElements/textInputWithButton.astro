@@ -1,0 +1,13 @@
+---
+import "../../styles/global.css"
+
+const {inputLabel, buttonLabel} = Astro.props;
+---
+
+<fieldset class="fieldset">
+    <legend class="fieldset-legend">{inputLabel}</legend>
+    <div class="join p-2">
+        <input type="text" class="input" placeholder="Type here" />
+        <button class="btn">{buttonLabel}</button>
+    </div>
+  </fieldset>

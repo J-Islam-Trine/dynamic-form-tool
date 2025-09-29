@@ -1,0 +1,19 @@
+---
+const { data } = Astro.props;
+---
+
+<aside class="h-full w-64 max-w-[16rem] bg-white p-4 border-r border-gray-200 overflow-y-auto">
+  {
+    data.map((sidebar) => (
+      <div class="mb-2">
+        <a
+          href={sidebar.link}
+          class="block truncate text-sm text-blue-700 hover:text-blue-900"
+        >
+          {sidebar.label}
+        </a>
+      </div>
+    ))
+  }
+</aside>
+ 

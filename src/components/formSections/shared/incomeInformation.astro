@@ -1,0 +1,26 @@
+---
+import CheckBox from "../../formElements/checkBox/checkBox.astro";
+import CheckBoxField from "../../formElements/checkBox/checkBoxField.astro";
+import TextInputGroup from "../../formElements/textInputGroup.astro";
+import TextInput from "../../formElements/textInput.astro";
+---
+
+<TextInputGroup label="Income Information">
+      <TextInput label="Basic (monthly) Tk." id="salariedBasicIncome" placeholder="" />
+      <TextInput label="Allowances (monthly) Tk." id="salariedAllowances" placeholder="" />
+      <TextInput label="Total (monthly) Tk." id="salariedTotalIncome" placeholder="" />
+</TextInputGroup>
+
+
+<TextInputGroup groupLabel="Additional income">
+    <TextInput label="Source of other income" id="sourceOfOtherIncome" placeholder="" />
+    <TextInput label="Income of spouse Tk." id="spouseIncome" placeholder="" />
+    <TextInput label="Other income Tk." id="otherIncome" placeholder="" />
+  </TextInputGroup>
+  
+
+  
+<TextInputGroup groupLabel="TIN Information">
+    <TextInput label="e-TIN No." id="eTinNo" placeholder="" />
+    <TextInput label="Old TIN No." id="oldTinNo" placeholder="" />
+</TextInputGroup>

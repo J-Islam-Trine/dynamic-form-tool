@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+
+//Layouts
+import PrimaryLayout from "../components/layouts/basic/primaryLayout.astro";
+---
+
+<PrimaryLayout>
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content grid grid-cols-2">
+            <div class="">
+                <h1 class="text-5xl font-bold">Login now!</h1>
+                <p class="py-6">
+                  Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                  quasi. In deleniti eaque aut repudiandae et a id nisi.
+                </p>
+            </div>
+            <div class="">
+                <div class="card bg-base-100 w-full shrink-0 shadow-2xl">
+                    <div class="card-body">
+                      <fieldset class="fieldset">
+                        <label class="label">Email</label>
+                        <input type="email" class="input w-full" placeholder="Email" />
+                        <label class="label">Password</label>
+                        <input type="password" class="input w-full" placeholder="Password" />
+                        <div><a class="link link-hover">Forgot password?</a></div>
+                        <button class="btn btn-neutral mt-4">Login</button>
+                      </fieldset>
+                      <p class="text-center font-semibold">Or Login As:</p>
+                      <div class="flex justify-center gap-2">
+                        <button class="btn btn-neutral mt-4" >
+                            <a href="/BU/home">Branch Manager</a>
+                        </button>
+                        <button class="btn btn-neutral mt-4">
+                          <a href="/sales/dashboard">Relationship Officer</a>
+                        </button>
+                        <a href="/risk" class="btn btn-neutral mt-4" >Retail Risk Officer</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+
+
+</PrimaryLayout>

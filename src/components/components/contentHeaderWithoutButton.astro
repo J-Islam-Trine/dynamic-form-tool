@@ -1,0 +1,29 @@
+---
+const { appNumber } = Astro.props;
+
+const {label = "Label",
+    appId =`${appNumber}`,
+    date = "dd-mm-yyy",
+    branch = "Branch",
+    handler = "Handler",
+    hidden=false,
+} = Astro.props;
+---
+
+<!-- application header -->
+
+<div class="flex flex-row justify-between items-center p-2">
+    <div class="flex flex-col gap-2">
+        <span class="text-3xl font-semibold text-black">{label}: #{appId}</span>
+        <span class="text-lg font-normal text-slate-500 flex flex-row gap-5">
+            <span>Submitted on</span>
+            <span>{date}</span>
+            <span>{branch}</span>
+        </span>
+    </div>
+    <!-- <div hidden={hidden}>
+        <span class="btn btn-warning">Update</span>
+        <span class="btn btn-error">Delete</span>
+    </div> -->
+
+</div>

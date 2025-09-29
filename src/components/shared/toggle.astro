@@ -1,0 +1,90 @@
+---
+import "../../styles/global.css";
+---
+<div id="iconToggle" class="overflow-hidden flex flex-row border-2 border-slate-300 rounded-full">
+
+    <div id="islamic" class="w-full px-5 py-2 bg-[#5D5FEF]">
+        <svg
+        class="min-h-5"
+        aria-label="enabled"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 121.86 122.88"
+        class="transition-transform duration-300 hover:scale-110"
+    >
+        <g
+            fill="#FFFFFF"
+            stroke="none"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2"
+        >
+            <path
+                d="M98.52,110.47c-5.55,3.6-9.21,5.81-10.96,6.63c-8.24,3.85-16.97,5.78-26.15,5.78c-17,0-31.47-6.01-43.45-17.99 
+                C5.98,92.91,0,78.44,0,61.44C0,44.33,6.01,29.83,18.04,17.9C30.08,5.98,44.7,0,61.92,0c12.66,0,24.87,4.11,36.6,12.32 
+                C75.18,7.61,59.44,4.43,40.08,23.74c-10.4,10.4-15.61,22.97-15.61,37.7c0,14.62,5.18,27.16,15.55,37.62 
+                C59.44,118.68,75.05,115.18,98.52,110.47z M75.09,54.39h17.85l5.58-16.97l5.47,16.97h17.87l-14.45,10.45l5.47,17.05 
+                L98.52,71.41L84.04,81.89l5.5-17.05L75.09,54.39z"
+            />
+        </g>
+    </svg>
+    </div>
+
+    <div id="bank" class="w-full px-5 py-2 bg-[#FFFFFF]">
+         <svg
+         class="min-h-5"
+        viewBox="0 0 122.88 108.91"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="house"
+        class="transition-transform duration-300 hover:scale-110"
+    >
+        <g
+            fill="#5D5FEF"
+            stroke="none"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+        
+        >
+            <path
+                d="M2.79,41.59L61.44,0l58.95,41.59H2.79z M0,102.28h9.08v-6.33h1.32v-3.02l3.85,0V56.7H6.38v-8.68h110.11v8.68h-7.86v36.23
+                h3.85v3.02l1.32,0v6.33h9.08v6.63H0V102.28z M32.59,95.95h4.44v-3.02l3.85,0V56.7H28.74v36.23h3.85V95.95z 
+                M59.22,95.95h4.45v-3.02l3.84,0V56.7H55.37v36.23h3.85V95.95z M85.85,95.95h4.45v-3.02l3.85,0V56.7H82v36.23h3.85V95.95z 
+                M41.69,31.1l19.84-15.22L81.48,31.1H41.69z"
+            />
+        </g>
+    </svg>
+    </div>
+</div>
+
+
+
+<script is:inline>
+  const islamicBtn = document.getElementById('islamic');
+  const bankBtn = document.getElementById('bank');
+
+  document.getElementById('iconToggle').addEventListener('click', function (e) {
+    // Determine which button was clicked
+    const target = e.target.closest('#islamic, #bank');
+    if (!target) return;
+
+    const isIslamic = target.id === 'islamic';
+
+    // Update backgrounds
+    islamicBtn.classList.toggle('bg-[#5D5FEF]', isIslamic);
+    islamicBtn.classList.toggle('bg-[#FFFFFF]', !isIslamic);
+
+    bankBtn.classList.toggle('bg-[#5D5FEF]', !isIslamic);
+    bankBtn.classList.toggle('bg-[#FFFFFF]', isIslamic);
+
+    // Update fills (first <g> element inside each)
+    const islamicIcon = islamicBtn.querySelector('g');
+    const bankIcon = bankBtn.querySelector('g');
+
+    if (isIslamic) {
+      islamicIcon.setAttribute('fill', '#FFFFFF');
+      bankIcon.setAttribute('fill', '#5D5FEF');
+    } else {
+      islamicIcon.setAttribute('fill', '#5D5FEF');
+      bankIcon.setAttribute('fill', '#FFFFFF');
+    }
+  });
+</script>

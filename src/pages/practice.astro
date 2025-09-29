@@ -1,0 +1,20 @@
+---
+import TwoColumnsFullWidth from "../components/layouts/twoColumnsFullWidth.astro";
+import DisplayCard from "../components/shared/displayCard.astro";
+import { dataSupplement } from "../scripts/data";
+import MainLayout from "../components/layouts/mainLayout.astro";
+---
+<MainLayout>
+    <TwoColumnsFullWidth>
+        {
+            dataSupplement.map((dem, index) => (
+                <DisplayCard
+                    key={index}
+                    title={dem.title}
+                    content={dem.content}
+                    logo={dem.logo}
+                />
+            ))
+        }
+    </TwoColumnsFullWidth>
+</MainLayout>

@@ -1,0 +1,21 @@
+---
+const { competitors = [] } = Astro.props;
+---
+
+<fieldset class="fieldset">
+  <legend class="fieldset-legend">Your Competitors</legend>
+  <div class="join p-2">
+    <input type="text" class="input" placeholder="Type here" />
+    <button class="btn">Add</button>
+  </div>
+  <ul class="list bg-base-100 rounded-box shadow-md">
+    {competitors.map((name, index) => (
+      <li class="list-row">
+        <div class="text-xl font-thin opacity-30 tabular-nums">{(index + 1).toString().padStart(2, '0')}</div>
+        <div class="list-col-grow">
+          <div class="font-normal text-xl">{name}</div>
+        </div>
+      </li>
+    ))}
+  </ul>
+</fieldset>

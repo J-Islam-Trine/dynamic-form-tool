@@ -1,0 +1,144 @@
+---
+import { Icon } from "astro-icon/components";
+import { FormInputType } from "../../scripts/data";
+import FormModal from "../Modal/formModal.astro";
+import Table from "../Table/table.astro";
+import IconxText from "../../components/shared/iconxText.astro"
+
+// Props with defaults
+const {
+  title = "title",
+  data = [],
+  SectionCSS = "",
+  modalHidden = true,
+  buttonHidden = true,
+  titleHidden = false,
+  titleCSS = "bg-blue-400 text-white",
+  
+  icon = "mdi:add",
+  buttonClass= "",
+  buttonName = "Button",
+  buttonLink = "#",
+
+  modalName = "incomming",
+  modalId = "my_modal_1",
+  titleModal = "title title",
+  subtitleModal = "sub",
+  modalButtonLink = "#",
+  modalButtonName = "Button Modal",
+} = Astro.props;
+---
+
+<div class="mb-5 mx-3">
+  <!-- Header -->
+  <div
+    id={title}
+    hidden={titleHidden}
+    class={`${titleCSS} rounded-sm p-3 flex flex-row justify-between `}
+  >
+    <span class="text-xl font-semibold">{title}</span>
+
+    <!-- Normal Button -->
+    <a
+      href={buttonLink}
+      class=`btn ${buttonClass} join flex flex-row items-center gap-2 rounded-sm`
+      hidden={buttonHidden}
+    >
+      <Icon class="text-2xl join-item" name={icon} />
+      <span class="join-item">{buttonName}</span>
+    </a>
+
+    <!-- Modal Trigger Button -->
+    <button
+      class="join flex flex-row items-center gap-2 btn rounded-sm"
+      onclick={`${modalId}.showModal()`}
+      hidden={modalHidden}
+    >
+      <Icon class="text-2xl join-item" name={icon} />
+      <span class="join-item">{modalName}</span>
+    </button>
+  </div>
+
+  <!-- Form Content -->
+  <div class="w-full">
+    <fieldset class="fieldset">
+      <div class={SectionCSS}>
+        {data.map((dem, index) => (
+          <div class={`${dem.elementClass} px-5`} key={index}>
+            <legend class="fieldset-legend">{dem.label}</legend>
+
+            <!-- Select Input -->
+            {dem.type === "select" && (
+              <select class={`select ${dem.cls}`} disabled={dem.disabled}>
+                {dem.options?.map((option, optIdx) => (
+                  <option
+                    key={optIdx}
+                    value={option.value}
+                    disabled={dem.disabled}
+                    selected={dem.selected}
+                  >
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            )}
+
+            <!-- Table -->
+            {dem.type === "table" && <Table table={dem.tableData} />}
+
+            <!-- Modal -->
+            {dem.type === "modal" && (
+              <FormModal
+                titleModal={titleModal}
+                subtitleModal={subtitleModal}
+                modalId={modalId}
+                modalData={dem.modalData}
+                modalButtonName={modalButtonName}
+                modalButtonLink={modalButtonLink}
+              />
+            )}
+
+            {dem.type === "checkbox" && (
+            <div>
+              <input
+                class={dem.cls}
+                type="checkbox"
+                placeholder={dem.placeholder}
+                checked={dem.checked}
+                disabled={dem.disabled}
+              />
+            </div>
+          )}
+
+            {dem.type === "button" && (
+              <div class={dem.cls}>
+                <IconxText
+                      iconName={dem.iconName}
+                      iconColor={dem.iconColor}
+                      iconText={dem.iconText}
+                      iconLink={dem.iconLink}
+                    />
+              </div>
+          )}
+
+            <!-- Default Input -->
+            {dem.type !== "select" &&
+              dem.type !== "table" &&
+              dem.type !== "checkbox" &&
+              dem.type !== "button" &&
+              dem.type !== "modal" && (
+                <input
+                  class={`${FormInputType[dem.type]?.class || ""} ${dem.cls}`}
+                  type={FormInputType[dem.type]?.type || dem.type}
+                  placeholder={dem.placeholder}
+                  value={dem.value}
+                  checked={dem.checked}
+                  disabled={dem.disabled}
+                />
+              )}
+          </div>
+        ))}
+      </div>
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+---
+import "../../styles/global.css"
+
+//components
+import MainLayout from "../../components/layouts/mainLayout.astro"
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import Card from "../../components/layouts/card.astro";
+import Table from "../../components/Table/table.astro";
+
+//data
+import {cpvHomeTableData} from "../../data/cpv/home/table.js"
+---
+
+<MainLayout username="Hashi Ahmed" role="CPV Officer" avatarImageUrl="https://i.pravatar.cc/150?img=49">
+    <h1>CPV Console</h1>
+
+
+    <div>
+                <Table table={cpvHomeTableData}/>
+            </div>
+
+</MainLayout>

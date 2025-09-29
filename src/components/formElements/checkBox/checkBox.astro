@@ -1,0 +1,8 @@
+---
+import "../../../styles/global.css"
+const {legendText, checked, id, name} = Astro.props
+---
+<label class="label">
+    <input type="checkbox" id={id} name={name} class="checkbox checkbox-xs"/>
+      {legendText}
+</label>

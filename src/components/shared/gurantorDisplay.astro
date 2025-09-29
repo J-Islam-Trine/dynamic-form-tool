@@ -1,0 +1,39 @@
+---
+const { title, content, media, dataType } = Astro.props;
+---
+
+<div class="flex flex-col gap-5 h-full rounded-xl p-4 border border-slate-200 bg-white shadow-sm">
+  {title && (
+    <span class="font-semibold border-b-2 border-slate-300 pb-2 text-lg">
+      {title}
+    </span>
+  )}
+
+  {dataType === "text" && Array.isArray(content) && (
+    <div class="grid grid-cols-2 gap-y-2 text-sm">
+      {content.map((con) => (
+        <>
+          <span class="font-medium text-slate-700">{con.label}</span>
+          <span class="text-slate-900">{con.value}</span>
+        </>
+      ))}
+    </div>
+  )}
+
+  {dataType === "image" && Array.isArray(media) && (
+    <div class="flex flex-col gap-6 mt-2">
+      {media.map(({ label, value }) => (
+        value && (
+          <div class="flex flex-col items-start text-left" key={label}>
+            <span class="font-semibold mb-1">{label}</span>
+            <img
+              src={value}
+              alt={label}
+              class="w-40 h-auto rounded-lg border border-slate-300 shadow-sm"
+            />
+          </div>
+        )
+      ))}
+    </div>
+  )}
+</div>

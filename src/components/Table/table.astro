@@ -1,0 +1,22 @@
+---
+
+import "../../styles/global.css";
+import TableRow from "./tableRow.astro";
+const { table } = Astro.props;
+
+---
+<div class=`${table.tableCSS}`>
+  <table class="table table-zebra">
+    <thead class="">
+      <TableRow data={table.head}/>
+    </thead>
+
+    <tbody class="">
+
+      {table.body.map((value) => (
+          <TableRow data={value}/>
+      ))}
+
+    </tbody>
+  </table>
+</div>

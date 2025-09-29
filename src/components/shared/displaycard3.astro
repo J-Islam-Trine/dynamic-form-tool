@@ -1,0 +1,38 @@
+---
+const { title, content, dataType } = Astro.props;
+---
+
+<div class="card bg-base-100 shadow-xl my-4">
+  <div class="card-body">
+    <h2 class="card-title text-lg font-bold mb-4">{title}</h2>
+
+    {dataType === "text" && (
+      <div class="grid grid-cols-2 gap-4">
+        {content.map(item => (
+          <div>
+            <p class="font-semibold">{item.label}</p>
+            <p>{item.value}</p>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {dataType === "image" && (
+      <div class="grid grid-cols-2 gap-4">
+        {content.map(item => (
+          item.value !== "Null" ? (
+            <div class="space-y-2">
+              <p class="font-semibold">{item.label}</p>
+              <img src={item.value} alt={item.label} class="w-full rounded border" />
+            </div>
+          ) : (
+            <div class="space-y-2">
+              <p class="font-semibold">{item.label}</p>
+              <p class="italic text-gray-500">Not Available</p>
+            </div>
+          )
+        ))}
+      </div>
+    )}
+  </div>
+</div>

@@ -1,0 +1,29 @@
+---
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import FormLayout from "../../../components/layouts/formLayout.astro";
+
+import { formInputNominee } from "../../../scripts/formCreateData";
+
+---
+
+<MainLayout>
+
+    <FormLayout formSectionLabel="Nominee Information" formSectionData={formInputNominee} nextFormSectionName="/applications/create/employment"></FormLayout>
+
+
+<!-- <div class="mt-5">
+    <span class="text-2xl font-semibold ">
+        Nominee Information
+    </span>
+</div>
+<FormCreate>
+    <div slot="container">
+        <FormInput formData = {formInputNominee}/>
+    </div>
+    
+    <div slot="sidebar">
+    <FormProgressWidgets progress={progressNominee}/>
+    </div>
+
+</FormCreate> -->
+</MainLayout>

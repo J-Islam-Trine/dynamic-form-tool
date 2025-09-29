@@ -1,0 +1,39 @@
+---
+//adding dynamic routes handler
+export function getStaticPaths() {
+  return [{ params: { appId: "1122", appId2: "1122" } }];
+}
+
+const { appId } = Astro.params;
+
+import "../../../styles/global.css";
+import {photoEvidenceTableData, verificationChecklistTableData} from "../../../data/cpv/home/table"
+import {businessInfo} from "../../../data/cpv/home/businessInfo"
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import VerificationHeader from "../../../components/cpvComponents/verificationHeader.astro";
+import Table from "../../../components/Table/table.astro";
+
+---
+
+<MainLayout
+  username="Hashi Ahmed"
+  role="CPV Officer"
+  avatarImageUrl="https://i.pravatar.cc/150?img=43"
+>
+  <div class="flex flex-col gap-5 px-2 lg:px-0">
+    <VerificationHeader
+      title={`VERIFICATION: ${businessInfo.businessName} (Case #${businessInfo.caseId})`}
+      subtitle={`LOCATION: ${businessInfo.location} (Accuracy: ${businessInfo.accuracy})`}
+    />
+    <div class="w-full flex flex-col gap-5 lg:gap-0 lg:flex-row">
+      <div class="flex-1">
+        <h1 class="font-semibold text-xl">Photo Evidence</h1>
+        <Table table ={photoEvidenceTableData} />
+      </div>
+      <div class="flex-1">
+        <h1 class="font-semibold text-xl">Verification Checklist</h1>
+        <Table table ={verificationChecklistTableData} />
+      </div>
+    </div>
+  </div>
+</MainLayout>

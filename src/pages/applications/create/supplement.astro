@@ -1,0 +1,30 @@
+---
+import FormInput from "../../../components/shared/formInput.astro";
+import FormProgressWidgets from "../../../components/form/formProgressWidgets.astro";
+import FormCreate from "../../../components/layouts/formCreate.astro";
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import FormLayout from "../../../components/layouts/formLayout.astro";
+import { formInputSupplement } from "../../../scripts/formCreateData";
+import { progressSupplement } from "../../../scripts/progressData";
+---
+
+<MainLayout>
+
+    <FormLayout formSectionLabel="Supplement Information" formSectionData={formInputSupplement} nextFormSectionName="/applications/create/spouse">
+<!-- <div class="mt-5">
+    <span class="text-2xl font-semibold ">
+        Supplement Information
+    </span>
+</div>
+<FormCreate>
+    <div slot="container">
+        <FormInput formData = {formInputSupplement}/>
+    </div>
+    
+    <div slot="sidebar">
+        <!-- component update progressbar props -->
+    <FormProgressWidgets progress={progressSupplement}/>
+    </div>
+
+</FormCreate> -->
+</MainLayout>

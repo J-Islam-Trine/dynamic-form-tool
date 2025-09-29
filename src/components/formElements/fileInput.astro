@@ -1,0 +1,10 @@
+---
+import "../../styles/global.css"
+
+const {legendText} = Astro.props
+---
+
+<fieldset class="fieldset">
+    <legend class="fieldset-legend font-normal">{legendText}</legend>
+    <input type="file" class="file-input file-input-sm file-input-accent" />
+  </fieldset>

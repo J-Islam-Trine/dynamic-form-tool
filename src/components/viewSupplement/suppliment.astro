@@ -1,0 +1,19 @@
+---
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import DisplayCard from "../shared/displayCard2.astro";
+import { dataSupplement } from "../../scripts/data";
+---
+
+<TwoColumnsFullWidth>
+  <!-- First Layer: Info -->
+  <DisplayCard
+    title={dataSupplement[0].title}
+    content={dataSupplement[0].content}
+  />
+
+  <!-- Second Layer: Media -->
+  <DisplayCard
+    title={dataSupplement[1].title}
+    media={dataSupplement[1].media}
+  />
+</TwoColumnsFullWidth>

@@ -1,0 +1,40 @@
+<!-- 
+## TextArea
+
+### Description
+A customizable text area component for user input, which is styled and can be configured with various properties like placeholder text and requirement status.
+
+### How to use
+1. Import the `TextArea` component into your Astro file.
+
+2. Use the component with the desired props:
+
+<TextArea 
+  legendText="Enter Details" 
+  placeholderText="Type your message here..." 
+  required={true} 
+  fieldId="message" 
+  fieldName="userMessage" 
+/>
+
+
+
+### Props List
+- **legendText**: *string* (optional) - The text for the legend of the text area.
+- **placeholderText**: *string* (optional) - The placeholder text displayed inside the text area.
+- **required**: *boolean* (optional) - Indicates whether the text area is required.
+- **fieldId**: *string* (optional) - The id attribute for the text area.
+- **fieldName**: *string* (optional) - The name attribute for the text area.
+-->
+---
+//css stylesheet
+import "../../styles/global.css"
+
+//props
+const {legendText, placeholderText, required, fieldId, fieldName} = Astro.props
+---
+
+<fieldset class="fieldset">
+    <legend class="fieldset-legend">{legendText}</legend>
+    <textarea id={fieldId} name={fieldName} class="textarea" placeholder={placeholderText} required={required}></textarea>
+  </fieldset>

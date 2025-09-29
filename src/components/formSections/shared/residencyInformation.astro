@@ -1,0 +1,48 @@
+---
+import CheckBox from "../../formElements/checkBox/checkBox.astro";
+import CheckBoxField from "../../formElements/checkBox/checkBoxField.astro";
+import TextInput from "../../formElements/textInputGroup.astro";
+---
+
+<CheckBoxField checkBoxTitle="Your Residential Status *">
+    <CheckBox id="residenceStatusOwned" name="residentialStatus" value="owned" legendText="Owned"/>
+    <CheckBox id="residenceStatusFamilyOwned" name="residentialStatus" value="familyOwned" legendText="Family owned"/>
+    <CheckBox id="residenceStatusCompanyProvided" name="residentialStatus" value="companyProvided" legendText="Company provided"/>
+    <CheckBox id="residenceStatusRented" name="residentialStatus" value="rented" legendText="Rented"/>
+    <CheckBox id="residenceStatusOther" name="residentialStatus" value="other" legendText="Other"/>
+  </CheckBoxField>
+  
+  <TextInput label="Residential Address *" id="residentialAddress1" placeholder="" />
+  <TextInput label="" id="residentialAddress2" placeholder="" />
+  <TextInput label="" id="residentialAddress3" placeholder="" />
+  
+  <TextInput label="If rented, rental per month in Tk." id="rentalPerMonth" placeholder="" />
+  
+  <TextInput label="Nearest Landmark" id="residentialNearestLandmark" placeholder="" />
+  
+  <TextInput label="District / City *" id="residentialDistrictCity" placeholder="" />
+  
+  <TextInput label="Post Code *" id="residentialPostCode" placeholder="" />
+  
+  <TextInput label="Area / Police Station" id="residentialAreaPoliceStation" placeholder="" />
+  
+  <TextInput label="Residence Phone No-" id="residencePhoneNo" placeholder="" type="tel" />
+  
+  <TextInput label="No. of month(s) at current address *" id="monthsAtCurrentAddress" placeholder="" />
+  
+  
+
+  
+  <TextInput label="Your Permanent Address" id="permanentAddress1" placeholder="" />
+  <TextInput label="" id="permanentAddress2" placeholder="" />
+  <TextInput label="" id="permanentAddress3" placeholder="" />
+  
+  <TextInput label="Area / Police Station" id="permanentAreaPoliceStation" placeholder="" />
+  
+  <TextInput label="Nearest Landmark" id="permanentNearestLandmark" placeholder="" />
+  
+  <TextInput label="District / City" id="permanentDistrictCity" placeholder="" />
+  
+  <TextInput label="Post Code" id="permanentPostCode" placeholder="" />
+  
+  <TextInput label="Permanent Phone No." id="permanentPhoneNo" placeholder="" type="tel" />

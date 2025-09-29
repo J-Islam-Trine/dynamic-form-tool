@@ -1,0 +1,24 @@
+---
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import FormLayout from "../../../components/layouts/formLayout.astro";
+import { formInputReference } from "../../../scripts/formCreateData";
+---
+
+<MainLayout>
+    <FormLayout formSectionLabel="Reference Information" formSectionData={formInputReference} nextFormSectionName="/applications/create/nominee"></FormLayout>
+<!-- <div class="mt-5">
+    <span class="text-2xl font-semibold ">
+        Reference Information
+    </span>
+</div>
+<FormCreate>
+    <div slot="container">
+        <FormInput formData = {formInputReference}/>
+    </div>
+    
+    <div slot="sidebar">
+    <FormProgressWidgets progress={progressReference}/>
+    </div>
+
+</FormCreate> -->
+</MainLayout>

@@ -1,0 +1,12 @@
+---
+import "../../../styles/global.css"
+
+const {checkBoxTitle} = Astro.props
+---
+
+
+<fieldset class="fieldset">
+  <legend class="fieldset-legend font-normal">{checkBoxTitle}</legend>
+  <slot />
+
+  </fieldset>

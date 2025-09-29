@@ -1,0 +1,27 @@
+---
+import MainLayout from "../components/layouts/mainLayout.astro";
+import FormBuilder from "../components/layouts/formBuilder.astro"
+import Fields from "../components/FormBuilder/fields.astro"
+import FieldProperties from "../components/FormBuilder/fieldProperties.astro";
+import FormView from "../components/FormBuilder/formView.astro";
+
+
+import { FormBuilderField } from "../scripts/data";
+
+---
+<MainLayout>
+    <!-- <FormSectionBlock title={title} data={data} SectionCSS={SectionCSS}/> -->
+     <div class="py-20">
+         <FormBuilder>
+            <div class="" slot="fields">
+                <Fields fieldData={FormBuilderField} buttonStyle = "btn btn-outline btn-normal"/>
+            </div>
+            <div class="" slot="view">
+               <FormView/>
+            </div>
+            <div class="" slot="properties">
+                <FieldProperties/>
+            </div>
+         </FormBuilder>
+     </div>
+</MainLayout>

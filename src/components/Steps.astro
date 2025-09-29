@@ -1,0 +1,148 @@
+---
+import "../styles/global.css"
+
+---
+
+<div class="container mx-auto p-4">
+    <!-- Steps component -->
+    <ul class="steps mb-8">
+        <li data-step="1" data-content="1"  class="step step-primary w-full">
+            <span class="step-text">Demographic</span>
+        </li>
+        <li data-step="2" data-content="2"  class="step">
+            <span class="step-text">Contact Info</span>
+            
+        </li>
+        <li data-step="3" data-content="3"  class="step">
+            <span class="step-text">Other information</span>
+        </li>
+    </ul>
+
+    <!-- Form with fieldsets -->
+    <form>
+        <!-- Step 1 -->
+        <fieldset class="form-step active">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Name</span>
+                </label>
+                <input type="text" placeholder="Name" class="input input-bordered">
+            </div>
+            
+            <div class="flex justify-end mt-4">
+                <button type="button" class="btn btn-primary next-step">Next</button>
+            </div>
+        </fieldset>
+
+        <!-- Step 2 -->
+        <fieldset class="form-step">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Email</span>
+                </label>
+                <input type="email" placeholder="Email" class="input input-bordered">
+            </div>
+            
+            <div class="flex justify-between mt-4">
+                <button type="button" class="btn prev-step">Previous</button>
+                <button type="button" class="btn btn-primary next-step">Next</button>
+            </div>
+        </fieldset>
+
+        <!-- Step 3 -->
+        <fieldset class="form-step">
+            <div class="form-control">
+                <p>Confirmation content...</p>
+            </div>
+            
+            <div class="flex justify-between mt-4">
+                <button type="button" class="btn prev-step">Previous</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const steps_current_primary = document.querySelectorAll('.step-primary');
+        const steps = document.querySelectorAll('.step');
+        const formSteps = document.querySelectorAll('.form-step');
+        const stepText = document.querySelectorAll('.step-text');
+        
+        let currentStep = 0;
+
+        console.log(stepText[currentStep].textContent )
+        
+        
+
+        
+
+        function updateSteps() {
+            // Update step indicators
+            steps.forEach((step, index) => {
+                step.classList.toggle('step-primary', index === currentStep);
+                
+            });
+
+            
+            
+
+            
+            
+            // Update form steps
+            formSteps.forEach((step, index) => {
+                step.classList.toggle('active', index === currentStep);
+                if(index === currentStep)
+                {
+                    console.log(step.attributes['data-content'].value)
+                }
+
+            });
+        }
+
+        document.querySelectorAll('.next-step').forEach(button => {
+            
+            button.addEventListener('click', () => {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateSteps();
+                    
+
+
+                    
+                }
+            });
+        });
+
+        document.querySelectorAll('.prev-step').forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateSteps();
+                    
+                   
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+
+    
+
+    .step-text
+    {
+        font-size: 0;
+    }
+   
+    .form-step {
+        display: none;
+
+    }
+
+    .form-step.active {
+        display: block;
+    }
+</style>

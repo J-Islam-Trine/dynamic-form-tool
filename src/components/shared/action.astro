@@ -1,0 +1,6 @@
+---
+const {btnType, label, link, id} = Astro.props;
+---
+<div class="w-full">
+    <a id={id} href={link} class=`w-full btn btn-${btnType}` >{label}</a>
+</div>

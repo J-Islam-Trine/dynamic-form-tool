@@ -1,0 +1,79 @@
+---
+import "../../../styles/global.css";
+
+//layouts
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import FormModal from "../../../components/Modal/formModal.astro";
+import FormSectionBlock from "../../../components/form/formSectionBlock.astro";
+import { formWorkflowAddStep, formViewWorkflow } from "../../../scripts/formCreateData";
+import FormInput from "../../../components/shared/formInput.astro";
+
+---
+
+<MainLayout>
+  <!-- <FormModal/> -->
+  
+{formWorkflowAddStep.map((data)=>(
+
+        <FormSectionBlock
+        title={data.title}
+        data = {data.formInput}
+        SectionCSS={data.SectionCSS}
+        // elementClass={data.elementClass}
+        buttonHidden={data.buttonHidden}
+        modalHidden={data.modalHidden}
+        modalName={data.modalName}
+        modalId={data.modalId}
+        titleModal={data.titleModal}
+        // subtitleModal={data.subtitleModal}
+        />
+    ))}
+    <div class="w-full">
+        <FormInput 
+        formData = {formViewWorkflow}
+        />
+    </div>
+
+  <!-- <div class="flex flex-col gap-2 items-center">
+        <div class="card w-96 bg-base-100 border card-md shadow-sm">
+            <div class="card-body">
+              <h2 class="card-title">Define the stage</h2>
+              <p class="text-md font-semibold text-center">If...</p>
+              <select class="select">
+                <option disabled selected>Pick an option</option>
+                <option>RO</option>
+                <option>RM</option>
+                <option>RRO</option>
+              </select>
+              <div class="border-2 p-2">
+                <p class="text-md font-semibold text-center">chooses to.....</p>
+              <select class="select">
+                <option disabled selected>Pick an option</option>
+                <option>Save As Draft</option>
+                <option>Submit to RM</option>
+              </select>
+              </div>
+              <div class="border-2 p-2">
+                <p class="text-md font-semibold text-center">chooses to.....</p>
+              <select class="select">
+                <option disabled selected>Pick an option</option>
+                <option>Save As Draft</option>
+                <option>Submit to RM</option>
+              </select>
+              <p class="text-md font-semibold text-center">Forward it to.....</p>
+              <select class="select">
+                <option disabled selected>Pick an option</option>
+                <option>Save As Draft</option>
+                <option>Application Approval - RM</option>
+              </select>  
+              </div>
+              <div>
+
+              </div>
+              
+            </div>
+          </div>
+            
+    </div>
+     -->
+</MainLayout>

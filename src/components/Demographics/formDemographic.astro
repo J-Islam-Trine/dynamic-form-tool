@@ -1,0 +1,48 @@
+---
+import { dataDemographic } from "../../scripts/data";
+import Chamber from "./chamber.astro";
+---
+
+<div class="flex flex-col gap-5">
+    <div >
+        <div class="text-2xl font-medium p-2 rounded-sm bg-blue-400 text-white">
+            {dataDemographic[0].title}
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-start py-5 gap-3 w-full">
+            <Chamber label="Name" value={dataDemographic[0].Name} labelStyle="" valueStyle="border-2 min-w-20 " bodyStyle="items-center w-full"/>
+            <Chamber label="Age" value={dataDemographic[0].Age} labelStyle="" valueStyle="border-2 min-w-20 " bodyStyle="items-center w-full"/>
+            <Chamber label="Date of Bith" value={dataDemographic[0].DOB} labelStyle="" valueStyle="border-2 min-w-20 " bodyStyle="items-center w-full"/>
+            <Chamber label="Gender" value={dataDemographic[0].Gender} labelStyle="" valueStyle="border-2 min-w-20 " bodyStyle="items-center w-full"/>
+            <Chamber label="National ID" value={dataDemographic[0].NID} labelStyle="" valueStyle="border-2 min-w-20 " bodyStyle="items-center w-full"/>
+        </div>
+    </div>
+
+    
+
+
+    <div>
+        <div class="text-2xl font-medium p-2 rounded-sm bg-blue-400 text-white">
+            {dataDemographic[1].title}
+        </div>
+
+        <div class="flex flex-row flex-wrap gap-20  py-5">
+            <div class="flex flex-col items-start">
+                <Chamber label="Email" value={dataDemographic[1].Email} labelStyle="" valueStyle="" bodyStyle=""/>
+                <Chamber label="Phone" value={dataDemographic[1].Phone} labelStyle="" valueStyle="" bodyStyle=""/>
+                <Chamber label="Alternative Phone" value={dataDemographic[1].AlPhone} labelStyle="" valueStyle="" bodyStyle=""/>
+            </div>
+            
+            <div class="flex flex-col items-start justify-center">
+                <span class="font-medium">Address</span>
+                
+                <Chamber label="Street" value={dataDemographic[1].Address} labelStyle="" valueStyle="" bodyStyle=""/>
+                <Chamber label="City" value={dataDemographic[1].City} labelStyle="" valueStyle="" bodyStyle=""/>
+                <Chamber label="District" value={dataDemographic[1].District} labelStyle="" valueStyle="" bodyStyle=""/>
+                <Chamber label="Country" value={dataDemographic[1].Country} labelStyle="" valueStyle="" bodyStyle=""/>
+                <Chamber label="Post Code" value={dataDemographic[1].Postcode} labelStyle="" valueStyle="" bodyStyle=""/>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

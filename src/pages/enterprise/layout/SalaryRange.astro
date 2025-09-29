@@ -1,0 +1,22 @@
+---
+const { ranges = [] } = Astro.props;
+---
+
+<fieldset class="fieldset bg-base-100 border-base-300 rounded-box p-4">
+  <legend class="fieldset-legend">Salary Range Information</legend>
+  {ranges.map(range => (
+    <div class="w-full p-2">
+      <h3 class="font-semibold text-md p-1">{range.label}</h3>
+      <div class="flex gap-2">
+        <label class="input w-3/4">
+          No of Employees
+          <input type="text" class="grow text-right" placeholder="type here" />
+        </label>
+        <label class="input w-3/4">
+          No. of Expected Files
+          <input type="text" class="grow text-right" placeholder="type here" />
+        </label>
+      </div>
+    </div>
+  ))}
+</fieldset>

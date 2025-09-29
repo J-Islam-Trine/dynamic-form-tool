@@ -1,0 +1,11 @@
+---
+import MainLayout from "../components/layouts/mainLayout.astro";
+
+//components
+import Table from "../components/Table/table.astro";
+import {TableLoanApplication} from "../scripts/tableData"
+---
+
+<MainLayout>
+    <Table table={TableLoanApplication}/>
+</MainLayout>

@@ -1,0 +1,33 @@
+---
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import TwoColumnsFullWidth from "../../../components/layouts/twoColumnsFullWidth.astro";
+import DisplayCard from "../../../components/shared/displayCard2.astro";
+import { legalOpinionViewData } from "../../../scripts/data";
+import FormProgressWidgets from "../../../components/form/formProgressWidgets.astro";
+import { progressLegalOpinion } from "../../../scripts/progressData";
+---
+
+<MainLayout>
+  <div class="my-10">
+    <span class="text-2xl font-semibold">
+      Legal Opinion View
+    </span>
+  </div>
+
+  <TwoColumnsFullWidth>
+    {
+      legalOpinionViewData.map((section, index) => (
+        <DisplayCard
+          key={index}
+          title={section.title}
+          content={section.content}
+          dataType="text"
+        />
+      ))
+    }
+
+    <div slot="sidebar">
+      <FormProgressWidgets progress={progressLegalOpinion} />
+    </div>
+  </TwoColumnsFullWidth>
+</MainLayout>

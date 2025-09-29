@@ -1,0 +1,20 @@
+---
+import AppCompletionStat from "../appStatus/AppCompletionStat.astro";
+import MainLayout from "../components/layouts/mainLayout.astro";
+import FourColumn from "../components/layouts/fourColumn.astro";
+import NewApplicationTitle from "../components/applicationBlocks/newApplicationTitle.astro";
+import NewApplicationContainer from "../components/applicationBlocks/newApplicationContainer.astro";
+---
+<MainLayout>
+    <NewApplicationTitle/>
+    <FourColumn>
+        <div  slot="main">
+            <NewApplicationContainer/>
+        </div>
+        <div slot="sidebar">
+            <AppCompletionStat/>
+        </div>
+
+    </FourColumn>
+</MainLayout>
+

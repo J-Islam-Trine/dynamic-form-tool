@@ -1,0 +1,9 @@
+---
+import "../../styles/global.css"
+
+const {alertType="alert-success"} = Astro.props;
+---
+
+<div role="alert" class=`alert ${alertType}`>
+  <span class="">Hello <span class="font-bold">User</span>, welcome to EBL LOS Application</span>
+</div>

@@ -1,0 +1,89 @@
+---
+import { Icon } from "astro-icon/components";
+import FormSectionBlock from "../form/formSectionBlock.astro";
+import InputXicon from "../formElements/inputXicon.astro";
+
+---
+<div class="flex flex-col gap-10 px-10">
+
+    <div class="flex flex-col gap-2">
+        <span class="text-2xl font-semibold">Jumpstart Your Dream Career with us</span>
+        <span class="flex flex-row items-center gap-2 text-warning">
+            <Icon class="text-2xl" name="mdi:plus" />
+            <span class="text-sm">
+                Add description
+            </span>
+        </span>
+    </div>
+    
+    <div class="flex flex-col gap-5">
+        <div class="">
+            <span class="text-lg font-semibold">Professional Information</span>
+        </div>
+        <div class="grid grid-cols-2 gap-5">
+            <InputXicon 
+            label="Full Name"
+            icon="mdi:account-outline"
+            type="text"
+            typeClass="input input-text"
+            placeholder="Enter your name"
+            />
+            <InputXicon 
+            label="Email"
+            icon="mdi:email-outline"
+            type="email"
+            typeClass="input"
+            placeholder="example@email.com"
+            />
+        </div>
+        <div class="grid grid-cols-2 gap-5">
+            <InputXicon 
+            label="Phone number"
+            icon="mdi:phone-outline"
+            type="tel"
+            typeClass="input input-text"
+            placeholder="+880 123 1231 2312"
+            />
+            <InputXicon 
+            label="Date of Birth"
+            icon="mdi:calendar-month-outline"
+            type="datetime-local"
+            typeClass="input"
+            placeholder="dd-mm-yyyy"
+            />
+        </div>
+
+    </div>
+
+    <!-- LinkedIn profile -->
+    <div >
+        <span >
+            LinkedIn Profile
+        </span>
+
+        <InputXicon 
+        icon="mdi:linkedin" 
+        placeholder="linkedin.com/in/yourname"
+        />
+    </div>
+
+    <!-- LinkedIn profile -->
+    <div >
+        <span >
+            Portfolio
+        </span>
+
+        <InputXicon 
+        icon="mdi:web" 
+        placeholder="www.yourportfolio.com"
+        />
+    </div>
+
+    <!-- Add more field -->
+    <div class="my-5">
+        <div class="flex flex-row items-center justify-center btn btn-outline btn-warning border-2 border-dotted">
+            <Icon class="text-2xl" name="mdi:plus"/>
+            <span>Add Field</span>
+        </div>
+    </div>
+</div>

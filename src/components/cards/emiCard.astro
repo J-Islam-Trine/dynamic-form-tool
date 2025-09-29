@@ -1,0 +1,82 @@
+---
+import EmiCardData from "./emiCardData.astro";
+
+const {
+    cardTitle = "Your EMI Amount is",
+    cardTitleData = "349.32",
+    cardSubTitle = "Your total loan amount",
+    cardSubTitleValue = "1,00,000",
+} = Astro.props;
+const cardData = [
+    {
+        label: "Interest Rate",
+        data: "0.50%",
+        labelClass: "font-normal",
+        dataClass: "font-semibold",
+        cardClass: "flex flex-col gap-0",
+    },
+    {
+        label: "Months",
+        data: "24",
+        labelClass: "font-normal",
+        dataClass: "font-semibold",
+        cardClass: "flex flex-col gap-0 items-end",
+    },
+    {
+        label: "Total Interest",
+        data: "603.28 TK",
+        labelClass: "font-normal",
+        dataClass: "font-semibold",
+        cardClass: "flex flex-col gap-0",
+    },
+    {
+        label: "Total Payment",
+        data: "100603.28 TK",
+        labelClass: "font-normal",
+        dataClass: "font-semibold",
+        cardClass: "flex flex-col gap-0 items-end",
+    },
+];
+---
+
+<div
+    class="w-full flex flex-col gap-3 p-5 border-slate-300 border-2 rounded-xl items-center bg-blue-500 text-white"
+>
+<!-- card title -->
+    <div
+        class="flex flex-row gap-3 w-full justify-center border-slate-200 border-b-2 py-2"
+    >
+        <EmiCardData
+            label={cardTitle}
+            labelClass="text-xl font-medium"
+            data={cardTitleData}
+            dataClass="text-xl font-medium"
+            cardClass="w-fit"
+        />
+    </div>
+<!-- card subtitle -->
+    <div class="border-b-2 border-slate-200 py-2 bg-blue-500">
+        <EmiCardData
+            label={cardSubTitle}
+            labelClass="text-xl font-normal"
+            data={cardSubTitleValue}
+            dataClass="text-xl font-medium"
+            cardClass="flex flex-row gap-3 p-2"
+        />
+    </div>
+
+    <!-- card data -->
+    <div class="w-full grid grid-cols-2 justify-between gap-x-5 gap-y-2">
+        {
+            cardData.map((data) => (
+                <EmiCardData
+                    label={data.label}
+                    labelClass={data.labelClass}
+                    data={data.data}
+                    dataClass={data.dataClass}
+                    cardClass={data.cardClass}
+                />
+            ))
+        }
+    </div>
+</div>

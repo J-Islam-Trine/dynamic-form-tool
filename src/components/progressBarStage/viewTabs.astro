@@ -1,0 +1,27 @@
+---
+import Tab from "./tab.astro";
+
+const tabs = [
+  { label: "Demographic", checked: true },
+  { label: "Supplement" },
+  { label: "Spouse" },
+  { label: "Guarantor" },
+  { label: "Reference" },
+  { label: "Nominee" },
+  { label: "Financial" },
+  { label: "Employment" },
+  { label: "Security" },
+  { label: "Products" },
+  { label: "Documents" },
+];
+---
+
+<div class="p-6">
+  <h2 class="text-xl font-semibold mb-2 text-center">Progress Stages</h2>
+
+  <div class="flex flex-wrap gap-x-1 gap-y-4 justify-center">
+    {tabs.map((tab, index) => (
+      <Tab name="appStage" label={tab.label} checked={tab.checked} id={`tab-${index}`} isLast={index === tabs.length - 1}/>
+    ))}
+  </div>
+</div>

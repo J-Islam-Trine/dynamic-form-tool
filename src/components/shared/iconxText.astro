@@ -1,0 +1,10 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { iconColor, iconName, iconText, iconLink="#" } = Astro.props;
+---
+
+<a class="flex items-center gap-1" href={iconLink}>
+    <Icon class={`w-5 h-5 ${iconColor}`} name={iconName} />
+    {iconText}
+</a>

@@ -1,0 +1,29 @@
+---
+import "../../../styles/global.css";
+
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import Breadcrumbs from "../../../components/shared/breadcrumbs.astro";
+
+//components
+import TextInput from "../../../components/formElements/textInput.astro";
+---
+
+<MainLayout username="Hasim Ahmed" role="Front Desk Officer">
+    <div class="stats bg-base-100 border-base-300 border p-2 flex flex-col">
+        <div class="stat text-center">
+          <div class="stat-title font-bold text-xl text-primary">Available amount for salary advance</div>
+          <div class="stat-value">Tk 10,000</div>
+        </div>
+    
+        <div class="stat grid grid-cols-2 mx-auto w-2/3">
+        <div>
+            <TextInput label="Type the amount you would like to ask" id="amount" type="number" class="w-" />
+        </div>
+        <div class="p-4">
+            <p class="text-lg font-bold"> Amount to be Credited: <span class="font-normal">BDT 10,000.00</span></p>
+            
+        </div>
+        <button class="btn btn-primary mt-4 col-span-2">Confirm and Request Advance</button>
+      </div>
+</MainLayout>
+

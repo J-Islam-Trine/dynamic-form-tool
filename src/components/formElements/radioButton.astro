@@ -1,0 +1,12 @@
+---
+import "../../styles/global.css"
+const {name, id, value, label, checked} = Astro.props
+---
+
+<div class="form-control">
+  <label class="label cursor-pointer">
+   
+    <input type="radio" name={name} class="radio radio-xs radio-neutral" value={value} checked={checked} />
+    <span class="label-text font-normal text-sm text-black">{label}</span>
+  </label>
+</div>

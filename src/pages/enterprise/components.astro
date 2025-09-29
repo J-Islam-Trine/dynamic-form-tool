@@ -1,0 +1,254 @@
+---
+import "../../styles/global.css"
+
+import MainLayout from "../../components/layouts/mainLayout.astro";
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+
+import TextInput from "../../components/formElements/textInput.astro";
+import PrimaryButton from "../../components/elements/buttons/PrimaryButton.astro";
+import TextInputWithButton from "../../components/formElements/textInputWithButton.astro";
+---
+
+<!-- <MainLayout> -->
+    <h2 class="font-semibold text-3xl p-2">Business Environment Informations</h3>
+
+
+    <div class="px-4">
+        <h3 class="font-semibold text-2xl p-2 mb-2 border-b-2 border-black-400">Sister Concerns Informations(if applicable)</h3>
+    
+        <TwoColumnsFullWidth>
+       
+            <TextInput label="Sister Concerns Name" />
+            <TextInput label="Nature of Business" />
+            
+            <div>
+                <fieldset class="fieldset">
+                    <legend class="fieldset-legend">Your Competitors</legend>
+                    <div class="join p-2">
+                        <input type="text" class="input" placeholder="Type here" />
+                        <button class="btn">Add</button>
+                    </div>
+                    <ul class="list bg-base-100 rounded-box shadow-md">
+                    
+              
+      <li class="list-row">
+        <div class="text-xl font-thin opacity-30 tabular-nums">01</div>
+       
+        <div class="list-col-grow">
+          <div class="font-normal text-xl">Haychem Corporation</div>
+        </div>
+      </li>
+                        
+                      </ul>
+                  </fieldset>
+                
+
+
+                
+            </div>
+
+            <div>
+                <fieldset class="fieldset">
+                    <legend class="fieldset-legend">Your Customers</legend>
+                    <div class="join">
+                        <input type="text" class="input" placeholder="Type here" />
+                        <button class="btn">Add</button>
+                    </div>
+                    <ul class="list bg-base-100 rounded-box shadow-md">
+                    
+              
+      <li class="list-row">
+        <div class="text-xl font-thin opacity-30 tabular-nums">01</div>
+       
+        <div class="list-col-grow">
+          <div class="font-normal text-xl">Haychem Corporation</div>
+        </div>
+      </li>
+                        
+                      </ul>
+                  </fieldset>
+                
+
+
+                
+            </div>
+
+
+    </TwoColumnsFullWidth>
+    </div>
+
+    <div class="px-4">
+        <h3 class="font-semibold text-2xl p-2 mb-2 border-b-2 border-black-400">Employee Information</h3>
+    
+        <TwoColumnsFullWidth>
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend">Executive Level</legend>
+                <label class="input font-bold  w-3/4">
+                   No. of Permanent Employees
+                    <input type="text" class="grow text-right" placeholder="Type here" />
+                  </label>
+                  <label class="input font-bold  w-3/4">
+                    No. of Contractual Staffs
+                     <input type="text" class="grow text-right" placeholder="Type here" />
+                   </label>
+              </fieldset>
+
+              <fieldset class="fieldset">
+                <legend class="fieldset-legend">Management Level</legend>
+                <label class="input font-bold  w-3/4">
+                   No. of Permanent Employees
+                    <input type="text" class="grow text-right" placeholder="Type here" />
+                  </label>
+                  <label class="input font-bold  w-3/4">
+                    No. of Contractual Staffs
+                     <input type="text" class="grow text-right" placeholder="Type here" />
+                   </label>
+              </fieldset>
+
+              <fieldset class="fieldset">
+                <legend class="fieldset-legend">Non-management Level</legend>
+                <label class="input font-bold w-3/4">
+                   No. of Permanent Employees
+                    <input type="text" class="grow text-right" placeholder="Type here" />
+                  </label>
+                  <label class="input font-bold  w-3/4">
+                    No. of Contractual Staffs
+                     <input type="text" class="grow text-right" placeholder="Type here" />
+                   </label>
+              </fieldset>
+
+            </TwoColumnsFullWidth>
+    </div>
+
+    <div class="px-4">
+        <h3 class="font-semibold text-2xl p-2 mb-2 border-b-2 border-black-400">Employee Salary Related Information</h3>
+    
+        <div class="px-4">
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend">Salary Structure Related Information</legend>
+                
+                <div class="flex justify-between gap-2 px-4">
+                    <label class="label text-black text-lg">
+                        <input type="checkbox" checked="checked" class="checkbox" />
+                        Fully Account Payee
+                      </label>
+
+                      <label class="label text-black text-lg">
+                        <input type="checkbox" checked="checked" class="checkbox" />
+                        Fully Account Payee
+                      </label>
+
+                      <label class="label text-black text-lg">
+                        <input type="checkbox" checked="checked" class="checkbox" />
+                        Partially Account Payee
+                      </label>
+                
+                </div>
+
+  
+
+                
+              </fieldset>
+
+
+
+    </div>
+
+    <TwoColumnsFullWidth>
+        <fieldset class="fieldset bg-base-100 border-base-300 rounded-box  p-4">
+            <legend class="fieldset-legend">Salary Account Information</legend>
+            <label class="input w-3/4">
+                Bank Name
+                <input type="text" class="grow text-right" placeholder="type here" />
+              </label>
+
+              <label class="input w-3/4">
+                Branch Name
+                <input type="text" class="grow text-right" placeholder="type here" />
+              </label>
+          </fieldset>
+
+          <fieldset class="fieldset bg-base-100 border-base-300 rounded-box  p-4">
+            <legend class="fieldset-legend">Salary Range Information</legend>
+            <div class="w-full p-2">
+               <h3 class="font-semibold text-md p-1">Below 15,0000</h3> 
+               <div class="flex gap-2">
+                <label class="input w-3/4">
+                    No of employees
+                    <input type="text" class="grow text-right" placeholder="type here" />
+                  </label>
+
+                  <label class="input w-3/4">
+                    No. of expected files
+                    <input type="text" class="grow text-right" placeholder="type here" />
+                  </label>
+               </div>
+            </div>
+
+            <div class="w-full p-2">
+                <h3 class="font-semibold text-md p-1"> Between 15,000 - 29,999</h3> 
+                <div class="flex gap-2">
+                 <label class="input w-3/4">
+                     No of employees
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+ 
+                   <label class="input w-3/4">
+                     No. of expected files
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+                </div>
+             </div>
+
+             <div class="w-full p-2">
+                <h3 class="font-semibold text-md p-1"> Between 25,000 - 49,999</h3> 
+                <div class="flex gap-2">
+                 <label class="input w-3/4">
+                     No of employees
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+ 
+                   <label class="input w-3/4">
+                     No. of expected files
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+                </div>
+             </div>
+
+             <div class="w-full p-2">
+                <h3 class="font-semibold text-md p-1"> Between 50,000 - 99,999</h3> 
+                <div class="flex gap-2">
+                 <label class="input w-3/4">
+                     No of employees
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+ 
+                   <label class="input w-3/4">
+                     No. of expected files
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+                </div>
+             </div>
+
+             <div class="w-full p-2">
+                <h3 class="font-semibold text-md p-1"> 1,00,000 - above</h3> 
+                <div class="flex gap-2">
+                 <label class="input w-3/4">
+                     No of employees
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+ 
+                   <label class="input w-3/4">
+                     No. of expected files
+                     <input type="text" class="grow text-right" placeholder="type here" />
+                   </label>
+                </div>
+             </div>
+          </fieldset>
+    </TwoColumnsFullWidth>
+
+    
+    
+
+
+<!-- </MainLayout> -->

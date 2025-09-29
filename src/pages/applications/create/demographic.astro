@@ -1,0 +1,43 @@
+---
+//components
+import FormInput from "../../../components/shared/formInput.astro";
+import FormProgressWidgets from "../../../components/form/formProgressWidgets.astro";
+import FormCreate from "../../../components/layouts/formCreate.astro";
+import ViewTabs from "../../viewTabs.astro";
+
+//Layouts
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+import FormLayout from "../../../components/layouts/formLayout.astro";
+//data
+import { formInputDemographic } from "../../../scripts/formCreateData";
+import { progressDemographic } from "../../../scripts/progressData";
+---
+
+<MainLayout>
+<FormLayout formSectionLabel="Demographic Information" formSectionData={formInputDemographic} nextFormSectionName="/applications/create/supplement">
+
+<!-- <div class="mt-5">
+    <ViewTabs />
+    <span class="text-2xl font-semibold ">
+        Demographic Information
+    </span>
+</div>
+<FormCreate>
+    <div slot="container">
+        <FormInput formData = {formInputDemographic}/>
+        <div class="">
+            <a href="/applications/create/supplement" class="flex justify-center mb-4 w-full">
+                <button class="btn btn-outline btn-primary w-1/2">Next</button>
+            </a>
+        </div>
+    </div>
+    
+    <div slot="sidebar">
+    <FormProgressWidgets progress={progressDemographic}/>
+    </div>
+
+
+
+</FormCreate> -->
+
+</MainLayout>

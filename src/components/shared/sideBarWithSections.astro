@@ -1,0 +1,45 @@
+---
+// import "../../styles/global.css";
+const { sidebar } = Astro.props;
+---
+
+<div class="drawer lg:drawer-open flex sm:flex-col">
+  <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col items-center">
+    <!-- Page content here -->
+    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
+      Open drawer
+    </label>
+  </div>
+  <div class="drawer-side ">
+    <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"
+    ></label>
+    <ul class="menu bg-white text-base-content min-h-full flex-col w-fit">
+      <!-- Sidebar content here -->
+      {
+        sidebar.map(section => (
+            <li class="font-bold text-black ">
+              <a class="" href="#">
+                {section.sectionName}
+                </a>
+              </li>
+            
+            <ul class="menu text-base-content py-0">
+              {section.children.map((child) => (
+
+                    <li class=" ">
+                      <a href={child.link}>
+                      {/* <span class="badge badge-sm badge-error">9</span> */}
+                      {child.label} 
+                      </a>
+                      </li>    
+                ))
+            }
+            </ul>
+            <div class="divider w-full m-0"></div>
+          
+
+     )) }
+     </ul>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+---
+import Breadcrumbs from "../components/shared/breadcrumbs.astro";
+import MainLayout from "../components/layouts/mainLayout.astro";
+import { breadWorkFlow } from "../scripts/data";
+import AppHeader from "../components/applicationBlocks/appHeader.astro";
+import Table from "../components/Table/table.astro";
+import { tableData } from "../scripts/tableData"
+---
+
+<MainLayout>
+    <Breadcrumbs breadcrumbs={breadWorkFlow} />
+    <AppHeader
+        appNumber="APP2596"
+        label="Loan Application"
+        date="May 15, 2025"
+        branch="Mirpur 10"
+        hidden={true}
+    />
+
+    <Table
+    table={tableData}
+    />
+</MainLayout>

@@ -1,0 +1,15 @@
+---
+import "../../styles/global.css"
+
+const {groupLabel} = Astro.props
+---
+
+<fieldset class="fieldset">
+  <legend  class="fieldset-legend font-normal text-md">{groupLabel}
+  </legend>
+  <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-2"> -->
+    <slot />
+  <!-- </div> -->
+</div>
+
+

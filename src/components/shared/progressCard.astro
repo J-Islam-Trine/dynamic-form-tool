@@ -1,0 +1,41 @@
+---
+import "../../styles/global.css";
+const {
+    title = "New Application",
+    target = "100",
+    done = "45",
+    left = "55",
+    progress = 60,
+} = Astro.props;
+---
+
+<div class="bg-white flex flex-col gap-2 shadow-lg border-slate-100 border-2 rounded-2xl p-2 ">
+    <div>
+        <span class="text-lg font-semibold text-slate-500">{title}</span>
+    </div>
+    <div class="flex flex-row items-center justify-between gap-2">
+        <progress class="progress progress-info w-50" value={progress} max="100"></progress>
+        <span
+            class="px-3 font-medium text-blue-500 border-2 border-blue-500 bg-blue-100 rounded-lg"
+        >
+            {progress}%
+        </span>
+    </div>
+    <div
+        class="flex flex-row font-semibold text-slate-500 text-sm justify-between"
+    >
+        <div class="flex flex-col items-center">
+            <span class="text-blue-500">{target}</span>
+            <span>Target</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <span class="text-green-500">{done}</span>
+            <span>Complete</span>
+        </div>
+        <div class="flex flex-col items-center">
+            <span class="text-red-500">{left}</span>
+            <span>Remaining</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+---
+import "../../styles/global.css"
+import Alert from "../shared/alert.astro"
+import Breadcrumbs from "../shared/breadcrumbs.astro"
+import Toggle from "../shared/toggle.astro"
+
+import {breadNewApp} from "../../scripts/data.js"
+---
+
+<div class="flex flex-row justify-between items-center h-10 my-5">
+        <Breadcrumbs breadcrumbs = {breadNewApp}/>
+        <Toggle />
+        <Alert/>
+    </div>

@@ -1,0 +1,16 @@
+---
+import "../../styles/global.css"
+const { breadcrumbs } = Astro.props;
+---
+
+<div class="breadcrumbs text-sm">
+   <ul>
+    {breadcrumbs.map((item) =>
+      item.href ? (
+        <li><a href={item.href}>{item.label}</a></li>
+      ) : (
+        <li class="font-semibold">{item.label}</li>
+      )
+    )}
+  </ul>
+</div>

@@ -1,0 +1,28 @@
+---
+//layout
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+
+//components
+import FormLayout from "../../../components/layouts/formLayout.astro";
+//data
+import { formInputGuarantor } from "../../../scripts/formCreateData";
+---
+
+<MainLayout>
+    <FormLayout formSectionLabel="Guarantor Information" formSectionData={formInputGuarantor} nextFormSectionName="/applications/create/reference"></FormLayout>
+<!-- <div class="mt-5">
+    <span class="text-2xl font-semibold ">
+        Guarantor Information
+    </span>
+</div>
+<FormCreate>
+    <div slot="container">
+        <FormInput formData = {formInputGuarantor}/>
+    </div>
+    
+    <div slot="sidebar">
+    <FormProgressWidgets progress={progressGuarantor}/>
+    </div>
+
+</FormCreate> -->
+</MainLayout>

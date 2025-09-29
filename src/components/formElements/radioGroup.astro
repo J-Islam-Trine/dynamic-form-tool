@@ -1,0 +1,13 @@
+---
+import "../../styles/global.css";
+
+const {fieldLabel} = Astro.props;
+---
+
+<fieldset class="text-black">
+  <legend class="fieldset-legend font-normal text-sm">{fieldLabel}</legend>
+
+  <div class="flex gap-2 pt-2">
+    <slot />
+    </div>
+  </fieldset>

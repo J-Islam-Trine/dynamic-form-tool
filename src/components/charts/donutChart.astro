@@ -1,0 +1,54 @@
+---
+
+---
+<!-- 
+<div>
+  <canvas id="myChart"></canvas>
+</div> -->
+
+
+
+
+<script>
+  import Chart from 'chart.js/auto'; // Use 'chart.js/auto'
+
+  const ctx = document.getElementById('myDonutChart');
+
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'doughnut', // Set the chart type to 'doughnut'
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+        datasets: [{
+          label: 'My Donut Dataset',
+          data: [12, 19, 3, 5, 2], // Array of data values
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(153, 102, 255)'
+          ],
+          hoverOffset: 4 // Optional: adds a slight offset on hover
+        }]
+      },
+      options: {
+        // Add any specific chart options here
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top', // Example: position the legend at the top
+          },
+          title: {
+            display: true,
+            text: 'My Doughnut Chart' // Example: add a chart title
+          }
+        }
+      }
+    });
+  }
+</script>
+
+<div  class="max-w-screen">
+  <canvas id="myDonutChart"></canvas>
+</div>

@@ -1,0 +1,25 @@
+---
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import DisplayCard from "../shared/displayCard2.astro";
+import { dataProductInfo } from "../../scripts/data";
+import FormProgressWidgets from "../form/formProgressWidgets.astro";
+import { progressLegalOpinion } from "../../scripts/progressData";
+---
+
+  <TwoColumnsFullWidth>
+    {
+      dataProductInfo.map((section, index) => (
+        <DisplayCard
+          key={index}
+          title={section.title}
+          content={section.content}
+          dataType="text"
+        />
+      ))
+    }
+
+    <div slot="sidebar">
+      <FormProgressWidgets progress={progressLegalOpinion} />
+    </div>
+  </TwoColumnsFullWidth>
+</MainLayout>

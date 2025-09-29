@@ -1,0 +1,16 @@
+---
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import DisplayCard from "../shared/displayCard2.astro";
+import { dataSpouse } from "../../scripts/data";
+---
+
+<TwoColumnsFullWidth>
+  {dataSpouse.map((section, index) => (
+    <DisplayCard
+      key={index}
+      title={section.title}
+      content={section.content}
+      dataType={section.dataType}
+    />
+  ))}
+</TwoColumnsFullWidth>

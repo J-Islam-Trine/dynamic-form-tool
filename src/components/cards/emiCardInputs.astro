@@ -1,0 +1,17 @@
+---
+import { formInputEMICalculator } from "../../scripts/formCreateData";
+import Action from "../shared/action.astro";
+import FormInput from "../shared/formInput.astro";
+---
+
+<div class="flex flex-col">
+    <FormInput
+    formData ={formInputEMICalculator}
+    />
+    <Action
+    btnType="primary"
+    label="Calculate"
+    link="#"
+    id="submi"
+    />
+</div>

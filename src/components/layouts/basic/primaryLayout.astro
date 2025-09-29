@@ -1,0 +1,41 @@
+---
+const { username="Jane Doe", role="Admin" } = Astro.props;
+
+import '../../../styles/global.css';
+
+//COMPONENTS
+import BasicNavbar from "../../navbars/basic/navbar.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Sidebar</title>
+</head>
+<body class="h-screen">
+  <!-- Top Navbar -->
+  <header class="sticky top-0 z-20">
+    <BasicNavbar userName={username} role={role}/>
+  </header>
+
+      <!-- Main Page Content -->
+      <main class="grid grid-cols-1 gap-1">
+            <!-- <Sidebar data={dataSidebar}/> -->
+            <!-- <SideBarWithSections sidebar={complexDataSideBar}/> -->
+             <div class="overflow-x-auto">
+               <slot />
+             </div>
+
+      </main>
+    </div>
+
+    <!-- Sidebar (responsive)
+    <div class="drawer-side top-10">
+      <label for="main-drawer" class="drawer-overlay"></label>
+      <Sidebar data={dataSidebar} />
+    </div> -->
+  </div>
+</body>
+</html>

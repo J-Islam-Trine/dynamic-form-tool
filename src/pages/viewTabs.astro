@@ -1,0 +1,27 @@
+---
+import Tab2 from "../components/shared/tab2.astro";
+
+const tabs = [
+  { label: "Demographic", checked: true },
+  { label: "Supplement" },
+  { label: "Spouse" },
+  { label: "Guarantor" },
+  { label: "Reference" },
+  { label: "Nominee" },
+  { label: "Financial" },
+  { label: "Employment" },
+  { label: "Security" },
+  { label: "Products" },
+  { label: "Documents" },
+];
+---
+
+<div class="p-6">
+  <!-- <h2 class="text-xl font-semibold mb-4 text-center">Progress Stages</h2> -->
+
+  <div class="flex flex-wrap gap-3 justify-center">
+    {tabs.map((tab, index) => (
+      <Tab2 name="appStage" label={tab.label} checked={tab.checked} id={`tab-${index}`} />
+    ))}
+  </div>
+</div>

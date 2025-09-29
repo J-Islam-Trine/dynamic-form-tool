@@ -1,0 +1,26 @@
+---
+import "../../styles/global.css"
+
+//layouts
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import ThreeColumnsFullWidth from "../../components/layouts/threeColumnsFullWidth.astro";
+
+import TextInput from "../formElements/textInputGroup.astro";
+import CheckBox from "../formElements/checkBox/checkBox.astro";
+import CheckBoxField from "../formElements/checkBox/checkBoxField.astro";
+---
+
+<ThreeColumnsFullWidth>
+    <CheckBoxField checkBoxTitle="Existing City Bank Card">
+            <CheckBox legendText="Existing City Bank Card"/ id="existingCityBankCard" name="existingCityBankCard" checked="true">
+    </CheckBoxField>    
+    <TextInput label="First Name" id="firstName" placeholder="Type here" />
+
+
+        <label class="label" for="dob">
+            <span class="label-text">Date of Birth</span>
+        </label>
+        <input type="date" id="dob" class="input input-bordered w-full" />
+    </div>
+
+   </ThreeColumnsFullWidth>

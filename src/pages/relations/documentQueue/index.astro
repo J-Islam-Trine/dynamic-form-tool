@@ -1,0 +1,39 @@
+---
+import MainNSC from "../../../components/layouts/mainNSC.astro";
+import SideBarWithSections from "../../../components/shared/sideBarWithSections.astro";
+import { buSidebarData} from "../../../scripts/sidebarData";
+import CardBadge from "../../../components/cards/cardBadge.astro";
+import { InformationCardData } from "../../../scripts/buData";
+import Breadcrumbs from "../../../components/shared/breadcrumbs.astro";
+import { breadDocumentVerificationData } from "../../../scripts/breadCrumbsData";
+import Table from "../../../components/Table/table.astro";
+
+import { relationsHomeTableData } from "../../../data/relations/home/table";
+---
+<MainNSC>
+<div class="" slot="sidebar">
+    <SideBarWithSections sidebar={buSidebarData}/>
+</div>
+<div class="" slot="content">
+    <Breadcrumbs breadcrumbs={breadDocumentVerificationData}
+            />
+<div class="w-full flex flex-wrap flex-col md:flex-row gap-2 lg:gap-6">
+                {
+                    InformationCardData.map((inData) => (
+                        <CardBadge 
+                        notification={inData.notification}
+                        content = {inData.content}
+                        badgeStyle = {inData.badgeStyle}
+                        conStyle = {inData.conStyle}
+                        conLink = {inData.conLink}
+                        />
+                    ))
+                }
+            </div>
+
+            <div class="mt-4">
+                <h1 class="font-bold text-2xl">Document Queue</h1>
+                <Table table={relationsHomeTableData}/>
+            </div>
+</div>
+</MainNSC>

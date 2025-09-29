@@ -1,0 +1,16 @@
+---
+import TabContainer from "../shared/tabContainer.astro";
+import Tab from "../shared/tab.astro";
+import FieldSetting from "./fieldSetting.astro";
+---
+
+<TabContainer>
+    <Tab name="properties" label="Field Settings" checked>
+        <div>
+            <FieldSetting/>
+        </div>
+    </Tab>
+    <Tab name="properties" label="Form Settings">
+        <div>Form Settings</div>
+    </Tab>
+</TabContainer>

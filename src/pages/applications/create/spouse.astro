@@ -1,0 +1,29 @@
+---
+//layouts
+import MainLayout from "../../../components/layouts/mainLayout.astro";
+
+//components
+import FormLayout from "../../../components/layouts/formLayout.astro";
+
+//data
+import { formInputSpouse } from "../../../scripts/formCreateData";
+---
+
+<MainLayout>
+    <FormLayout formSectionLabel="Spouse Information" formSectionData={formInputSpouse} nextFormSectionName="/applications/create/guarantor"></FormLayout>
+<!-- <div class="mt-5">
+    <span class="text-2xl font-semibold ">
+        Spouse Information
+    </span>
+</div>
+<FormCreate>
+    <div slot="container">
+        <FormInput formData = {formInputSpouse}/>
+    </div>
+    
+    <div slot="sidebar">
+    <FormProgressWidgets progress={progressSpouse}/>
+    </div>
+
+</FormCreate> -->
+</MainLayout>

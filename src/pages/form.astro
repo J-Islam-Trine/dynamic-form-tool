@@ -1,0 +1,40 @@
+---
+
+const tabName = "demographic"
+//layouts
+import MainLayout from "../components/layouts/mainLayout.astro";
+import TwoColumnWithRightBar from "../components/layouts/threeColumnWithRightBar.astro";
+
+//layouts
+import TwoColumnTabContent from "../components/layouts/tabContents/twoColumnTabContent.astro";
+
+import DemographicForm from "../components/form/demographicForm.astro";
+import EmploymentForm from "../components/formBlocks/employmentForm.astro";
+
+import FormProgressWidgets from "../components/form/formProgressWidgets.astro";
+import Tab from "../components/shared/tab.astro";
+import TabContainer from "../components/shared/tabContainer.astro";
+import FormSection from "../components/form/formSection.astro";
+import { progressDemographic } from "../scripts/progressData"
+
+---
+
+<MainLayout>
+    <TwoColumnWithRightBar>
+        <TabContainer>
+
+            <Tab name={tabName} label="Demographic" checked>
+                    <DemographicForm />
+                
+            </Tab>    
+
+            <Tab name={tabName} label="Personal Information">
+                <p class="">Tab content 2</p>
+            </Tab>    
+
+        </TabContainer>
+            
+            <FormProgressWidgets progress={progressDemographic}/>
+    </TwoColumnWithRightBar>
+    
+</MainLayout>

@@ -1,0 +1,17 @@
+---
+const { options = [] } = Astro.props;
+---
+
+<div class="px-4">
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Salary Structure Related Information</legend>
+    <div class="flex justify-between gap-2 px-4">
+      {options.map(label => (
+        <label class="label text-black text-lg">
+          <input type="checkbox" checked class="checkbox" />
+          {label}
+        </label>
+      ))}
+    </div>
+  </fieldset>
+</div>

@@ -1,0 +1,89 @@
+---
+import "../../../styles/global.css"
+
+import CheckBox from "../../formElements/checkBox/checkBox.astro";
+import CheckBoxField from "../../formElements/checkBox/checkBoxField.astro";
+import TextInput from "../../formElements/textInputGroup.astro";
+
+---
+
+<CheckBoxField checkBoxTitle="You are *">
+    <CheckBox id="youAreSalaried" name="youAre" value="salaried" legendText="Salaried"/>
+    <CheckBox id="youAreSelfEmployed" name="youAre" value="selfEmployed" legendText="Self-employed"/>
+    <CheckBox id="youAreBusinessmanIndustrialist" name="youAre" value="businessmanIndustrialist" legendText="Businessman / Industrialist"/>
+    <CheckBox id="youAreLandOwner" name="youAre" value="landOwner" legendText="Land Owner"/>
+  </CheckBoxField>
+  
+  <TextInput label="Company Name *" id="companyName" placeholder="" />
+  <TextInput label="Nature of Business" id="natureOfBusiness" placeholder="" />
+  
+  <CheckBoxField checkBoxTitle="Employment Status *">
+    <CheckBox id="employmentStatusPermanent" name="employmentStatus" value="permanent" legendText="Permanent"/>
+    <CheckBox id="employmentStatusContractual" name="employmentStatus" value="contractual" legendText="Contractual"/>
+    <CheckBox id="employmentStatusPartTime" name="employmentStatus" value="partTime" legendText="Part-Time"/>
+  </CheckBoxField>
+  
+  <TextInput label="Date of Joining *" id="dateOfJoining" placeholder="DD/MM/YYYY" type="date" />
+  
+  <TextInput label="Designation *" id="designation" placeholder="" />
+  <TextInput label="Department" id="department" placeholder="" />
+  <TextInput label="Employee ID No." id="employeeIDNo" placeholder="" />
+  
+  <div class="form-group">
+    <label for="officeAddress">Office Address *</label>
+    <textarea id="officeAddress" placeholder=""></textarea>
+  </div>
+  
+  <TextInput label="Area / Police Station *" id="officeAreaPoliceStation" placeholder="" />
+  <TextInput label="District / City *" id="officeDistrictCity" placeholder="" />
+  <TextInput label="Post Code *" id="officePostCode" placeholder="" />
+  <TextInput label="Phone +88 *" id="officePhone" placeholder="" type="tel" />
+  
+  <TextInput label="Name of previous organization" id="previousOrganizationName" placeholder="" />
+  <TextInput label="Office Ext." id="officeExt" placeholder="" />
+  
+  <CheckBoxField checkBoxTitle="For Business Persons: Business Ownership Type">
+    <CheckBox id="ownershipTypeProprietorship" name="businessOwnershipType" value="proprietorship" legendText="Proprietorship"/>
+    <CheckBox id="ownershipTypePartnership" name="businessOwnershipType" value="partnership" legendText="Partnership"/>
+    <CheckBox id="ownershipTypeLimitedCompany" name="businessOwnershipType" value="limitedCompany" legendText="Limited Company"/>
+  </CheckBoxField>
+  
+    <TextInput label="Mode of Sales(Cash)" id="modeOfSalesCash" placeholder="%" />
+    <TextInput label="Mode of sales(Credit)" id="modeOfSalesCredit" placeholder=" %" />
+
+  
+  <TextInput label="Total work experience in months *" id="totalWorkExperienceMonths" placeholder="" />
+  <TextInput label="Work experience in current organization in month(s)" id="currentOrgWorkExperienceMonths" placeholder="" />
+  <TextInput label="No. of Employees" id="noOfEmployees" placeholder="" />
+  
+  <CheckBoxField checkBoxTitle="Office Premises Status">
+    <CheckBox id="premisesStatusOwned" name="officePremisesStatus" value="owned" legendText="Owned"/>
+    <CheckBox id="premisesStatusRented" name="officePremisesStatus" value="rented" legendText="Rented"/>
+    <CheckBox id="premisesStatusLeased" name="officePremisesStatus" value="leased" legendText="Leased"/>
+    <CheckBox id="premisesStatusOther" name="officePremisesStatus" value="other" legendText="Other"/>
+  </CheckBoxField>
+  
+  <TextInput label="Business establishment date (if self employed)" id="businessEstablishmentDate" placeholder="DD/MM/YYYY" type="date" />
+  <TextInput label="No. of months with current organization" id="monthsWithCurrentOrganization" placeholder="" />
+  
+  <div class="business-figures-table col-span-2">
+    <h3 class="font-bold p-2">Business Figures</h3>
+    <div class="table-row table-header">
+      <div class="table-cell">Details</div>
+      <div class="table-cell">Year.........</div>
+      <div class="table-cell">Year.........</div>
+      <div class="table-cell">Year.........</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">Annual Profit</div>
+      <div class="table-cell"><TextInput id="annualProfitYear1" placeholder="" /></div>
+      <div class="table-cell"><TextInput id="annualProfitYear2" placeholder="" /></div>
+      <div class="table-cell"><TextInput id="annualProfitYear3" placeholder="" /></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">Annual Turnover</div>
+      <div class="table-cell"><TextInput id="annualTurnoverYear1" placeholder="" /></div>
+      <div class="table-cell"><TextInput id="annualTurnoverYear2" placeholder="" /></div>
+      <div class="table-cell"><TextInput id="annualTurnoverYear3" placeholder="" /></div>
+    </div>
+  </div>

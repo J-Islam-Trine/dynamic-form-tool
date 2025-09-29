@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components";
+const { user } = Astro.props;
+---
+
+<div class="card w-full max-w-5xl mx-auto bg-base-100 shadow-lg border border-base-300">
+  <div class="card-body space-y-4">
+    <div>
+      <a class="btn btn-primary btn-outline" href={user.applicationLink}>Application</a>
+    </div>
+    <!-- Title & Identity -->
+    <div class="flex items-center gap-4">
+      <Icon name="mdi:account-circle-outline" class="text-4xl text-primary" />
+      <div>
+        <h2 class="text-xl font-bold">{user.name}</h2>
+        <p class="text-sm text-gray-500">{user.userId}</p>
+      </div>
+    </div>
+
+    <!-- Personal Details -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <p><strong>Department:</strong> {user.department}</p>
+      <p><strong>Designation:</strong> {user.designation}</p>
+      <p><strong>Branch:</strong> {user.branch}</p>
+      <p><strong>Email:</strong> {user.email}</p>
+      <p><strong>Phone:</strong> {user.phone}</p>
+      <p><strong>LOS Role:</strong> {user.losRole}</p>
+      <p><strong>Status:</strong> 
+        <span class={`badge ${user.status === "Active" ? "badge-success" : "badge-warning"}`}>
+          {user.status}
+        </span>
+      </p>
+    </div>
+
+    <div class="divider">Access & Authority</div>
+
+    <!-- Access Details -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <p><strong>Access Level:</strong> {user.accessLevel}</p>
+      <p><strong>Review Authority:</strong> {user.loanAuthority}</p>
+      <p><strong>Approval Limit:</strong> {user.approvalLimit}</p>
+      <p><strong>Assigned Regions:</strong> {user.assignedRegions.join(", ")}</p>
+      <p><strong>Last Login:</strong> {user.lastLogin}</p>
+      <p><strong>Created At:</strong> {user.createdAt}</p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="card-actions justify-end pt-4">
+      <button class="btn btn-outline btn-info btn-sm">Edit Profile</button>
+      <button class="btn btn-error btn-sm">Deactivate</button>
+    </div>
+  </div>
+</div>

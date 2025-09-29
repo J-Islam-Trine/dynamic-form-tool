@@ -1,0 +1,30 @@
+---
+import "../../styles/global.css";
+import { Icon } from "astro-icon/components";
+const {
+    title,
+    value,
+    iconName,
+    iconColor,
+    bgColor,
+    textOrientation,
+    textColor,
+} = Astro.props;
+---
+
+<div
+    class=`card flex ${textOrientation} w-full p-2 card-xs border-2 border-slate-200 rounded-xl items-center`
+>
+    <div class="card-head flex" hidden>
+        <div class="w-full p-2">
+                <Icon class=`w-full h-full ${iconColor} ` name={iconName} />
+        </div>
+    </div>
+
+    <div class=`card-body p-0 ${bgColor} ${textColor}`>
+    <div class="flex flex-col gap-1">
+        <h5 class=`font-semibold text-base`>{title}</h5>
+        <p class="font-normal text-base">{value}</p>
+    </div>
+    </div>
+</div>

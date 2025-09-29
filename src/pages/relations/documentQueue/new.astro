@@ -1,0 +1,69 @@
+---
+import MainNSC from "../../../components/layouts/mainNSC.astro";
+import Table from "../../../components/Table/table.astro";
+import SideBarWithSections from "../../../components/shared/sideBarWithSections.astro";
+import { buSidebarData } from "../../../scripts/sidebarData";
+import {
+    TableNewDocumentVerification,
+    TableNewDocumentVerificationSummery,
+} from "../../../scripts/tableData";
+import {breadDocumentVerificationNewData} from "../../../scripts/breadCrumbsData";
+import Breadcrumbs from "../../../components/shared/breadcrumbs.astro";
+---
+
+
+<MainNSC>
+    <div class="" slot="sidebar">
+        <SideBarWithSections sidebar={buSidebarData} />
+    </div>
+
+    <div class="" slot="content">
+        <div class="flex flex-col gap-5">
+            <Breadcrumbs breadcrumbs={breadDocumentVerificationNewData}
+            />
+
+            <div class="flex flex-col lg:flex-row justify-between">
+                <h1 class="flex flex-col gap-5 font-semibold text-balance">
+                    #EBL-201 (ABC Traders)
+                </h1>
+                <div class="flex flex-row gap-2" >
+                    <div>
+                        <!-- Open the modal using ID.showModal() method -->
+                        <span class="btn btn-sm btn-outline btn-success" onclick="my_modal_1.showModal()">Submit</span>
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Add your feedback</h3>
+    <p class="py-4">Mention if there's any is issue.</p>
+    <textarea class="textarea textarea-bordered h-24 w-full" placeholder="Type here"></textarea>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn" id="modal_close_btn" onclick="window.location.href = '/relations/home';">Submit</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+                    </div>
+                    <!-- <span class="btn btn-sm btn-outline btn-success">Submit</span> -->
+                    <span class="btn btn-sm btn-outline btn-error">Save</span>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 px-2 py-3">
+                <h1 class="font-semibold text-balance">
+                    Validation Summary
+                </h1>
+
+                <Table table={TableNewDocumentVerificationSummery} />
+            </div>
+
+            <div>
+                <h1 class="font-semibold text-balance">
+                    Document verification
+                </h1>
+                <Table table={TableNewDocumentVerification} />
+            </div>
+        </div>
+    </div>
+</MainNSC>

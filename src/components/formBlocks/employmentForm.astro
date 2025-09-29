@@ -1,0 +1,40 @@
+---
+//components
+import MultipleChoice from "../formElements/multipleChoice.astro";
+import TextInput from "../formElements/textInputGroup.astro";
+---
+<MultipleChoice label="Current Employer" id="currentEmployerStatus">
+    <option value="" disabled selected>--- Select ---</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </MultipleChoice>
+  
+  <TextInput label="Working Since" id="workingSinceDate" placeholder="DD/MM/YYYY" type="date" />
+  
+  <TextInput label="Working Till" id="workingTillDate" placeholder="DD/MM/YYYY" type="date" />
+  
+  <TextInput label="Employee ID" id="employeeId" placeholder="Specify the employee ID." />
+  
+  <TextInput label="Grade" id="grade" placeholder="Specify the grade." />
+  
+  <TextInput label="Designation" id="designation" placeholder="Specify the designation." />
+  
+  
+  <h3 >Self Employed / Professional Details</h3>
+  
+  <TextInput label="Professional Name" id="professionalName" placeholder="Specify the professional name." />
+  
+  <div class="form-group">
+    <label for="professionalDescription">Professional Description</label>
+    <textarea id="professionalDescription" placeholder="Displays the professional description."></textarea>
+  </div>
+  
+  <TextInput label="Professional Email ID" id="professionalEmail" placeholder="Specify the professional email ID." type="email" />
+  
+  <TextInput label="Company / Firm Name" id="companyFirmName" placeholder="Specify the company or firm name." />
+  
+  <TextInput label="Registration Number of Company" id="companyRegNumber" placeholder="Specify the registration number." />
+  
+  <TextInput label="Start Date" id="companyStartDate" placeholder="DD/MM/YYYY" type="date" />
+  
+  <TextInput label="End Date" id="companyEndDate" placeholder="DD/MM/YYYY" type="date" />

@@ -1,0 +1,13 @@
+---
+import MainLayout from "../../../../components/layouts/mainLayout.astro";
+import FormInput from "../../../../components/shared/formInput.astro";
+import { formWorkflowViewAll } from "../../../../scripts/formCreateData";
+
+---
+<MainLayout>
+    <div class="w-full">
+        <FormInput 
+        formData = {formWorkflowViewAll}
+        />
+    </div>
+</MainLayout>

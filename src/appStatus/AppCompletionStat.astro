@@ -1,0 +1,53 @@
+---
+import ProgressItem from "../appStatus/ProgressItem.astro";
+
+const sections = [
+  { label: "New Application", percent: 45 },
+  { label: "Demographic Info", percent: 60 },
+  { label: "Sourcing Customer Info", percent: 80 },
+  { label: "Supplement Info", percent: 50 },
+  { label: "Guarantor Info", percent: 40 },
+  { label: "Reference", percent: 55 },
+  { label: "Nominee", percent: 30 },
+  { label: "Financial Info", percent: 75 },
+  { label: "Employment Info", percent: 65 },
+  { label: "Security Info", percent: 75 },
+];
+---
+
+<div class="status-container">
+  <div class="status-title">Application<br />Completion Status</div>
+  <div class="divider"></div>
+
+  {sections.map(section => (
+    <ProgressItem label={section.label} percent={section.percent} />
+  ))}
+</div>
+
+<style>
+  .status-container {
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    padding: 1.25rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  .status-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .divider {
+    width: 100%;
+    height: 2px;
+    background-color: #eee;
+    margin-bottom: 1rem;
+  }
+</style>

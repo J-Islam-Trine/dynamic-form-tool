@@ -1,0 +1,11 @@
+---
+import "../../styles/global.css"
+//components
+
+const {name, label, checked} = Astro.props
+---
+
+<input type="radio" name={name} class="tab checked:[--tab-bg:lightblue] text-white" aria-label={label} checked={checked}/>
+<div class="tab-content p-4">
+        <slot />
+</div>

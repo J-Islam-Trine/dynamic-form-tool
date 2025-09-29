@@ -1,0 +1,255 @@
+---
+import "../../styles/global.css";
+
+
+//layouts
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import ThreeColumnsFullWidth from "../../components/layouts/threeColumnsFullWidth.astro";
+
+//components
+import MultipleChoice from "../formElements/multipleChoice.astro";
+import TextInput from "../formElements/textInputGroup.astro";
+import NumberInput from "../formElements/numberInput.astro";
+import FormSection from "../form/formSection.astro";
+---
+
+
+    <FormSection title="Personal Information" id="demographicInformation">
+        <TextInput label="First Name" id="firstName" placeholder="Type here" />
+<TextInput label="Middle Name" id="middleName" placeholder="Type here" />
+<TextInput label="Last Name" id="lastName" placeholder="Type here" />
+
+<TextInput label="Date of Birth / Registration (DD/MM/YYYY)*" id="dob" placeholder="DD/MM/YYYY" />
+<NumberInput label="Age" id="age" placeholder="Type here"/>
+
+<MultipleChoice label="Gender *" id="gender">
+  <option value="" disabled selected>---Select---</option>
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+  <option value="other">Other</option>
+</MultipleChoice>
+
+<MultipleChoice label="Marital Status *" id="maritalStatus">
+  <option value="" disabled selected>---Select---</option>
+  <option value="single">Single</option>
+  <option value="married">Married</option>
+  <option value="divorced">Divorced</option>
+  <option value="widowed">Widowed</option>
+</MultipleChoice>
+
+<TextInput label="E-mail" id="email" placeholder="Type here" type="email" />
+
+<MultipleChoice label="Nationality Code *" id="nationalityCode">
+  <option value="bangladeshi" selected>BANGLADESHI</option>
+  <option value="indian">INDIAN</option>
+  <option value="us">US</option>
+  <option value="other">Other</option>
+</MultipleChoice>
+
+<MultipleChoice label="Location *" id="location">
+  <option value="" disabled selected>---Select---</option>
+  <option value="dhaka">Dhaka</option>
+  <option value="chittagong">Chittagong</option>
+  <option value="mymensingh">Mymensingh</option>
+  <option value="rajshahi">Rajshahi</option>
+  <option value="khulna">Khulna</option>
+  <option value="sylhet">Sylhet</option>
+  <option value="barisal">Barisal</option>
+  <option value="rangpur">Rangpur</option>
+</MultipleChoice>
+
+<TextInput label="Name-1" id="personalRefName1" placeholder="Type here" />
+<TextInput label="Name-2" id="personalRefName2" placeholder="Type here" />
+<TextInput label="Mobile No-1" id="personalRefMobile1" placeholder="Type here" type="tel" />
+<TextInput label="Mobile No-2" id="personalRefMobile2" placeholder="Type here" type="tel" />
+<TextInput label="Off Phone No-1" id="personalRefOffPhone1" placeholder="Type here" type="tel" />
+<TextInput label="Off Phone No-2" id="personalRefOffPhone2" placeholder="Type here" type="tel" />
+
+    </FormSection>
+
+<FormSection title="Employee/Business Address" id="addressInformation">
+
+<TextInput label="Address *" id="addressLine1" placeholder="Street address, P.O. box, company name, c/o" />
+
+<TextInput label="City *" id="city" placeholder="Type here" />
+
+<TextInput label="District *" id="district" placeholder="Type here" />
+
+<MultipleChoice label="Country *" id="country">
+  <option value="bangladesh" selected>Bangladesh</option>
+  <option value="india">India</option>
+  <option value="usa">USA</option>
+  <option value="uk">UK</option>
+  <option value="other">Other</option>
+</MultipleChoice>
+
+<MultipleChoice label="Years in current Address" id="yearsInAddress">
+  <option value="" disabled selected>--- Select ---</option>
+  <option value="lt1">Less than 1 year</option>
+  <option value="1-2">1-2 years</option>
+  <option value="3-5">3-5 years</option>
+  <option value="gt5">More than 5 years</option>
+</MultipleChoice>
+
+<TextInput label="Land Phone Number" id="landPhoneNumber" placeholder="Type here" type="tel" />
+
+<TextInput label="Mobile Phone No. *" id="mobilePhoneNumber1" placeholder="Type here" type="tel" />
+<TextInput label="Mobile Phone No-2" id="mobilePhoneNumber2" placeholder="Type here" type="tel" />
+
+<MultipleChoice label="Residential Status" id="residentialStatus">
+  <option value="" disabled selected>---Select---</option>
+  <option value="owner">Owner</option>
+  <option value="rented">Rented</option>
+  <option value="family">Living with Family</option>
+  <option value="company_provided">Company Provided</option>
+</MultipleChoice>
+
+
+</FormSection>
+
+
+<FormSection title="Residential Address" id="otherAddressInformation">
+
+
+    <TextInput label="Address" id="otherAddressLine1" placeholder="Street address" />
+    
+    
+    <TextInput label="City" id="otherCity" placeholder="Type here" />
+    
+    <TextInput label="Mobile No" id="otherMobileNo1" placeholder="Type here" type="tel" />
+    <TextInput label="Mobile No-2" id="otherMobileNo2" placeholder="Type here" type="tel" />
+    
+    <TextInput label="Residence No" id="residenceNo" placeholder="Type here" type="tel" />
+    
+    <TextInput label="Office Address" id="officeAddress" placeholder="Type here" />
+    
+    <TextInput label="Office Number" id="officeNumber" placeholder="Type here" type="tel" />
+    
+    <TextInput label="E mail" id="otherEmail" placeholder="Type here" type="email" />
+</FormSection>
+
+<FormSection title="Permanent Address" id="permanentAddressInformation">
+
+<TextInput label="Address *" id="permanentAddress" placeholder="Street address, P.O. box, etc." />
+
+<TextInput label="City *" id="permanentCity" placeholder="Type here" />
+
+<TextInput label="District *" id="permanentDistrict" placeholder="Type here" />
+
+<MultipleChoice label="Country *" id="permanentCountry">
+  <option value="bangladesh" selected>Bangladesh</option>
+  <option value="india">India</option>
+  <option value="usa">USA</option>
+  <option value="uk">UK</option>
+  <option value="other">Other</option>
+</MultipleChoice>
+
+<TextInput label="P.O. Box No." id="permanentPOBoxNo" placeholder="Type here" />
+
+<TextInput label="Phone Number" id="permanentPhoneNumber" placeholder="Type here" type="tel" />
+
+<TextInput label="Mobile No" id="permanentMobileNo1" placeholder="Type here" type="tel" />
+<TextInput label="Mobile No-2" id="permanentMobileNo2" placeholder="Type here" type="tel" />
+</FormSection>
+
+<FormSection title="Other Information" id="otherInformation">
+  <TextInput label="Father's Name *" id="fathersName" placeholder="Type here" />
+  <TextInput label="Mother's Maiden Name *" id="mothersMaidenName" placeholder="Type here" />
+  <TextInput label="Work Address" id="workAddress" placeholder="Type here" />
+  
+  <TextInput label="Spouse Name *" id="spouseName" placeholder="Type here" />
+  <TextInput label="Contact No" id="contactNo" placeholder="Type here" type="tel" />
+  <TextInput label="TIN *" id="tin" placeholder="Type here" />
+  
+  <MultipleChoice label="Edu. Qualification" id="eduQualification">
+    <option value="" disabled selected>--- Select ---</option>
+    <option value="none">None</option>
+    <option value="ssc">SSC/Dakhil/O-Level</option>
+    <option value="hsc">HSC/Alim/A-Level</option>
+    <option value="diploma">Diploma</option>
+    <option value="bachelor">Bachelor's Degree</option>
+    <option value="masters">Master's Degree</option>
+    <option value="phd">Ph.D.</option>
+    <option value="other">Other</option>
+  </MultipleChoice>
+  
+  <TextInput label="Existing Bank Name" id="existingBankName" placeholder="Type here" />
+  
+  <MultipleChoice label="Our Bank Staff *" id="ourBankStaff">
+    <option value="" disabled selected>--- Select ---</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </MultipleChoice>
+  
+  <MultipleChoice label="Banking with us *" id="bankingWithUs">
+    <option value="" disabled selected>--- Select ---</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </MultipleChoice>
+
+  <NumberInput label="No. Of Dependents *" id="noOfDependents" placeholder="Type here" />
+
+<TextInput label="Passport No" id="passportNo" placeholder="Type here" />
+<TextInput label="Passport Expiry Date" id="passportExpiryDate" placeholder="DD/MM/YYYY" type="date" />
+<TextInput label="Voter ID *" id="voterID" placeholder="Type here" />
+
+<NumberInput label="Earning Members In Family (if any)" id="earningMembersInFamily" placeholder="Type here" />
+<TextInput label="Driving License No" id="drivingLicenseNo" placeholder="Type here" />
+<MultipleChoice label="Sensitivity of Customer" id="sensitivityOfCustomer">
+  <option value="" disabled selected>---Select---</option>
+  <option value="high">High</option>
+  <option value="medium">Medium</option>
+  <option value="low">Low</option>
+</MultipleChoice>
+
+<TextInput label="Wedding Date" id="weddingDate" placeholder="DD/MM/YYYY" type="date" />
+<MultipleChoice label="Profession*" id="profession">
+  <option value="" disabled selected>Select</option>
+  <option value="service">Service</option>
+  <option value="business">Business</option>
+  <option value="housewife">Housewife</option>
+  <option value="student">Student</option>
+  <option value="retired">Retired</option>
+  <option value="agriculture">Agriculture</option>
+  <option value="other">Other</option>
+</MultipleChoice>
+
+<TextInput label="Customer IC" id="customerIC" placeholder="Type here" />
+<MultipleChoice label="Standing as guarantor of any other credit facility" id="guarantorCreditFacility">
+  <option value="" disabled selected>---Select---</option>
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</MultipleChoice>
+
+<TextInput label="Clients Guaranteed loan amount (if any)" id="clientsGuaranteedLoanAmount" placeholder="0.00" type="number" step="0.01" />
+<TextInput label="Guarantor's Loan a/c number in EBL (if any)" id="guarantorsLoanAcNumberEBL" placeholder="Type here" />
+<TextInput label="Guarantor's Loan Outstanding in EBL (if any)" id="guarantorsLoanOutstandingEBL" placeholder="Type here" type="number" step="0.01" />
+</FormSection>
+
+<FormSection title="Personal Strength" id="personalStrengthInformation">
+  <MultipleChoice label="Repeat/ Fresh" id="repeatFresh">
+    <option value="" disabled selected>---Select---</option>
+    <option value="repeat">Repeat</option>
+    <option value="fresh">Fresh</option>
+  </MultipleChoice>
+  
+  <MultipleChoice label="Age Group" id="ageGroup">
+    <option value="" disabled selected>---Select---</option>
+    <option value="18-24">18-24</option>
+    <option value="25-34">25-34</option>
+    <option value="35-44">35-44</option>
+    <option value="45-54">45-54</option>
+    <option value="55-64">55-64</option>
+    <option value="65+">65+</option>
+  </MultipleChoice>
+  
+  <MultipleChoice label="Income Group" id="incomeGroup">
+    <option value="" disabled selected>---Select---</option>
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+    <option value="very_high">Very High</option>
+  </MultipleChoice>
+  
+  <TextInput label="Region Group" id="regionGroup" placeholder="Type here" />
+</FormSection>

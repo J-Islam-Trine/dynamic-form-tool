@@ -1,0 +1,29 @@
+---
+const {
+  label = "Select an option",
+  labelHidden = false,
+  selectClass = "select-bordered",
+  disabled = false,
+  options = [],
+  selected = "",
+} = Astro.props;
+---
+
+<div class="form-control w-full mb-2">
+  { !labelHidden && (
+    <label class="label">
+      <span class="label-text font-medium">{label}</span>
+    </label>
+  )}
+
+  <select class={`select w-full ${selectClass}`} disabled={disabled}>
+    {options.map(option => (
+      <option 
+        value={option.value} 
+        selected={option.value === selected}
+      >
+        {option.label}
+      </option>
+    ))}
+  </select>
+</div>

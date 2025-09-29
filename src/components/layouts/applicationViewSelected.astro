@@ -1,0 +1,25 @@
+---
+
+import AppHeader from "../applicationBlocks/appHeader.astro";
+import ApplicationTitle from "../applicationBlocks/applicationTitle.astro";
+import TabContainer from "../shared/tabContainer.astro";
+
+import { breadAppSelected } from "../../scripts/data";
+
+//props
+const { ApplicationId } = Astro.props;
+---
+
+<div class="flex flex-col">
+    <ApplicationTitle breadcrumbs={breadAppSelected} />
+    <AppHeader
+        label="Loan Application"
+        appNumber={ApplicationId}
+        date="May 25, 2025"
+        branch="Mirpur 10"
+        handler="Musfiq"
+    />
+    <TabContainer>
+        <slot/>
+    </TabContainer>
+</div>

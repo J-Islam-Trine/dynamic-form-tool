@@ -1,0 +1,23 @@
+---
+import "../../styles/global.css"
+const { title, id } = Astro.props;
+import FormSectionHeader from "./formSectionHeader.astro";
+
+//components
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+---
+
+
+<div class="border-b-2 border-slate-300">
+    <FormSectionHeader title={title} id={id} />
+
+<div class="py-4">
+    <TwoColumnsFullWidth>
+        <slot />
+</TwoColumnsFullWidth>
+</div>
+
+
+</div>
+
+

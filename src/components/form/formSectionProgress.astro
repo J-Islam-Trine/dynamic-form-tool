@@ -1,0 +1,29 @@
+---
+import "../../styles/global.css";
+const { label, percent } = Astro.props;
+
+//components
+import Card from "../../components/layouts/card.astro";
+import RadioButton from "../formElements/radioButton.astro";
+---
+
+<div class="form-control w-full">
+  
+  <div class="w-full flex flex-row items-center gap-3 px-2">
+    <div>
+      <input type="radio"  name="radio-10" class="radio radio-sm text-primary"/>  
+    </div>
+
+    <div class="w-full flex flex-col">
+      <a href=`#${label}`>
+        <span class="label-text font-bold text-black text-md">{label}</span>
+      </a>
+      <div class="w-full flex flex-row gap-3 items-center">
+        <progress class="progress progress-primary" value={percent} max="100"
+        ></progress>
+        <span class="label-text-alt">{percent}%</span>
+      </div>
+    </div>
+
+  </div>
+</div>

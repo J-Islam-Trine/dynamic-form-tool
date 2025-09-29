@@ -1,0 +1,96 @@
+---
+import ApplicationRow from "./ApplicationRow.astro";
+
+
+// const {applications} = Astro.props;
+
+const {applications=[
+  {
+    id: "#SAL3025",
+    userName: "Asha Khatun",
+    loanType: "Card Loan",
+    branch: "Mirpur 10",
+    date: "Just now",
+    status: "Complete"
+  }
+]} = Astro.props;
+
+---
+
+<h1 class="page-title">Application View</h1>
+
+<table class="application-table">
+  <thead>
+    <tr>
+      <th class="header-line">Application ID</th>
+      <th class="header-line">User Name</th>
+      <th class="header-line">Loan Type</th>
+      <th class="header-line">Branch</th>
+      <th class="header-line">Date</th>
+      <th class="header-line">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {applications.map(app => (
+      <ApplicationRow app={app} />
+    ))}
+  </tbody>
+</table>
+
+<div class="pagination">
+  <button>&lt;</button>
+  <button>2</button>
+  <button class="active">3</button>
+  <button>4</button>
+  <button>5</button>
+  <button>&gt;</button>
+</div>
+
+<style>
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: Arial, sans-serif;
+  }
+
+  .application-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-bottom: 1.5rem;
+  }
+
+  .application-table th {
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid #ddd;
+    background-color: transparent;
+  }
+
+  .application-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pagination button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .pagination .active {
+    background-color: #333;
+    color: #fff;
+  }
+</style>

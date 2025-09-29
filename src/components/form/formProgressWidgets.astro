@@ -1,0 +1,12 @@
+---
+import FormSectionProgress from "./formSectionProgress.astro";
+const {progress} = Astro.props;
+---
+
+<div class="flex flex-col gap-3">
+    {
+        progress.map((item)=>(
+        <FormSectionProgress label={item.label || ""} percent={item.percent || ""}/>
+        ))
+    }
+</div>

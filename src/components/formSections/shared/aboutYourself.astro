@@ -1,0 +1,86 @@
+---
+import TextInput from "../../formElements/textInputGroup.astro";
+import RadioGroup from "../../formElements/radioGroup.astro";
+import Radio from "../../formElements/radioButton.astro";
+import CheckBox from "../../formElements/checkBox/checkBox.astro";
+import CheckBoxField from "../../formElements/checkBox/checkBoxField.astro";
+import NumberInput from "../../formElements/numberInput.astro";
+---
+
+<RadioGroup fieldLabel="Your Full Name" name="title">
+    <Radio id="titleMr" name="title-1" value="mr" label="Mr." checked="true"/>
+    <Radio id="titleMs" name="title-2" value="ms" label="Ms." />
+    <Radio id="titleMrs" name="title-3" value="mrs" label="Mrs." />
+    <Radio id="titleOther" name="title-4" value="other" label="Other" />
+  </RadioGroup>
+
+<TextInput label="" id="fullName" placeholder="" />
+
+
+
+<RadioGroup fieldLabel="Gender *" name="gender">
+  <Radio id="genderMale" value="male" label="Male" />
+  <Radio id="genderFemale" value="female" label="Female" />
+</RadioGroup>
+
+<TextInput label="National ID No." id="nationalIDNo" placeholder="" />
+
+<TextInput label="Nickname" id="nickname" placeholder="" />
+
+<TextInput label="Date of Birth *" id="dateOfBirth" placeholder="DD/MM/YYYY" type="date" />
+<TextInput label="Place of Birth" id="placeOfBirth" placeholder="" />
+<TextInput label="Nationality" id="nationality" placeholder="" />
+
+<TextInput label="Name on Passport" id="nameOnPassport" placeholder="" />
+<TextInput label="Passport Issue Place" id="passportIssuePlace" placeholder="" />
+<TextInput label="Issue Date" id="passportIssueDate" placeholder="DD/MM/YYYY" type="date" />
+<TextInput label="Expiry Date" id="passportExpiryDate" placeholder="DD/MM/YYYY" type="date" />
+<TextInput label="Passport No." id="passportNo" placeholder="" />
+<TextInput label="Other Documentation" id="otherDocumentation" placeholder="" />
+
+<CheckBoxField checkBoxTitle="Marital Status *">
+  <CheckBox id="maritalStatusSingle" name="maritalStatus" value="single" legendText="Single"/>
+  <CheckBox id="maritalStatusMarried" name="maritalStatus" value="married" legendText="Married"/>
+  <CheckBox id="maritalStatusDivorced" name="maritalStatus" value="divorced" legendText="Divorced"/>
+</CheckBoxField>
+
+<CheckBoxField checkBoxTitle="Is spouse employed?">
+  <CheckBox id="spouseEmployedYes" name="spouseEmployed" value="yes" legendText="Yes"/>
+  <CheckBox id="spouseEmployedNo" name="spouseEmployed" value="no" legendText="No"/>
+</CheckBoxField>
+
+<NumberInput label="No. of dependents *" id="noOfDependents" placeholder="" />
+
+<CheckBoxField checkBoxTitle="Educational Qualification *">
+  <CheckBox id="eduPostGraduate" name="eduQualification" value="postGraduate" legendText="Post Graduate"/>
+  <CheckBox id="eduGraduate" name="eduQualification" value="graduate" legendText="Graduate"/>
+  <CheckBox id="eduHSC" name="eduQualification" value="hsc" legendText="HSC"/>
+  <CheckBox id="eduOther" name="eduQualification" value="other" legendText="Other"/>
+</CheckBoxField>
+
+<TextInput label="Contact No. +88 *" id="contactNo" placeholder="" type="tel" />
+<TextInput label="Email" id="email" placeholder="" type="email" />
+
+<TextInput label="Father's Name *" id="fathersName" placeholder="" />
+<TextInput label="Mother's Name *" id="mothersName" placeholder="" />
+<TextInput label="Spouse's Name" id="spouseName" placeholder="" />
+
+<TextInput label="Contact No. +88" id="contactNoSpouse" placeholder="" type="tel" />
+<TextInput label="Profession" id="profession" placeholder="" />
+<TextInput label="Company Name" id="companyName" placeholder="" />
+
+<TextInput label="Your name as you would like it to appear on the card (leave one space between names, do not use title or nickname)" id="nameOnCard" placeholder="" />
+
+<CheckBoxField checkBoxTitle="How do you want to receive the card? *">
+  <CheckBox id="receiveCarOwnership" name="receiveCardMethod" value="carOwnership" legendText="Car Ownership"/>
+  <CheckBox id="receiveOwned" name="receiveCardMethod" value="owned" legendText="Owned"/>
+  <CheckBox id="receiveParents" name="receiveCardMethod" value="parents" legendText="Parents"/>
+  <CheckBox id="receiveOfficeProvided" name="receiveCardMethod" value="officeProvided" legendText="Office provided"/>
+  <CheckBox id="receiveNil" name="receiveCardMethod" value="nil" legendText="Nil"/>
+  <CheckBox id="receiveThroughCourier" name="receiveCardMethod" value="throughCourier" legendText="Through courier"/>
+  <CheckBox id="receiveFromCityBankBranch" name="receiveCardMethod" value="fromCityBankBranch" legendText="From City Bank branch"/>
+</CheckBoxField>
+
+<NumberInput label="Number of Cars" id="numberOfCars" placeholder="" />
+
+<TextInput label="If from branch, please write the name of the branch" id="cityBankBranchName" placeholder="" />

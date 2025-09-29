@@ -1,0 +1,39 @@
+---
+import DisplayField from "./DisplayField.astro"
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Employment Info</title>
+  </head>
+  <body>
+    <main class="info-wrapper">
+      <h1>Employment Information</h1>
+
+      <DisplayField title="Occupation" value="Software Engineer" />
+      <DisplayField title="Employer" value="ABC Corporation" />
+      <DisplayField title="Employment Status" value="Full Time" />
+      <DisplayField title="Years with Employer" value="3 Years" />
+    </main>
+  </body>
+
+  <style>
+    .info-wrapper {
+      /* max-width: 600px; */
+      /* margin: 2rem auto; */
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      font-family: "Segoe UI", sans-serif;
+    }
+
+h1 {
+  text-align: left;
+  /* margin-bottom: 1.5rem; */
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+  </style>
+</html>

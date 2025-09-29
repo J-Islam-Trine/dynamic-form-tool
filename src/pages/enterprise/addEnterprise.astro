@@ -1,0 +1,42 @@
+---
+import MainLayout from "../../components/layouts/mainLayout.astro";
+import TwoColumnsFullWidth from "../../components/layouts/twoColumnsFullWidth.astro";
+import FormInput from "../../components/shared/formInput.astro";
+import { formInputFCompanyInformation } from "../../scripts/formCreateData";
+import Components from "./components.astro";
+import CompetitorList from "./layout/CompetitorList.astro";
+import CustomerList from "./layout/CustomerList.astro";
+import EmployeeInfo from "./layout/EmployeeInfo.astro";
+import SalaryAccount from "./layout/SalaryAccount.astro";
+import SalaryRange from "./layout/SalaryRange.astro";
+import SisterConcern from "./layout/SisterConcern.astro";
+import SalaryStructure from "./layout/SalaryStructure.astro";
+import {
+    competitors,
+    customers,
+    employeeLevels,
+    structureOptions,
+    salaryRanges,
+} from "../../scripts/enterpriseData";
+---
+
+<MainLayout>
+    <div class="mb-20">
+        <FormInput formData={formInputFCompanyInformation} />
+        <!-- <Components/> -->
+        <SisterConcern>
+            <TwoColumnsFullWidth>
+                <CompetitorList competitors={competitors} />
+                <CustomerList customers={customers} />
+            </TwoColumnsFullWidth>
+        </SisterConcern>
+
+        <EmployeeInfo data={employeeLevels} />
+        <SalaryStructure options={structureOptions} />
+
+        <TwoColumnsFullWidth>
+            <SalaryAccount />
+            <SalaryRange ranges={salaryRanges} />
+        </TwoColumnsFullWidth>
+    </div>
+</MainLayout>

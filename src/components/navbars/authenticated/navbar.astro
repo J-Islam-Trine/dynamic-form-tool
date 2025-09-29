@@ -1,0 +1,94 @@
+---
+import "../../styles/global.css";
+
+const {userName, role} = Astro.props
+---
+
+<div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h8m-8 6h16"></path>
+                </svg>
+            </div>
+            <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+                <li><a>Card</a></li>
+                <li><a>SME</a></li>
+                <li><a>Retail</a></li>
+                <li><a>Loan Monitoring</a></li>
+            </ul>
+        </div>
+
+        <a href="/" class="btn btn-ghost text-xl flex items-center gap-2">
+  <img class="p-5" src="/src/assets/EBL.png" alt="EBL" width="100" />
+  <span>EBL</span>
+</a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+        <input
+            type="text"
+            placeholder="Search"
+            class="input input-bordered w-24 md:w-auto"
+        />
+        <ul class="menu menu-horizontal px-5">
+            <li><a class="btn btn-active">Card</a></li>
+            <li><a>SME</a></li>
+            <li><a>Retail</a></li>
+            <li><a>Loan Monitoring</a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-end">
+
+        <div class="indicator">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                ></path>
+
+            </svg>
+            
+        </div>
+
+        <div class="flex flex-row gap-5 py-2 pl-4  pr-5 shadow rounded-xl items-center justify-around">
+            
+            
+            <div class="flex items-center">
+                <img
+                    class="h-10 rounded-full"
+                    alt="Tailwind CSS Navbar component"
+                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                />
+            </div>
+
+            <div class="flex flex-col">
+                <span class="text-lg font-medium">{userName}</span>
+                <span class="text-sm">{role}</span>
+            </div>
+        </div>
+    </div>
+</div>

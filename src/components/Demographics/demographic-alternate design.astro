@@ -1,0 +1,73 @@
+---
+import "../../styles/global.css"
+
+import InformationCard from "../cards/informationCard.astro";
+import DisplayCard from "../shared/displayCard.astro";
+
+const applicationData = 
+[
+{
+  "title" : "Application Number",
+  "value" : "1234",
+  "iconName" : "mdi:information-outline",
+  "iconColor" : "text-blue-400",
+  "bgColor" : "",
+  "textOrientation" : "flex-row",
+  "textColor" : "text-black"
+},
+{
+  "title" : "Opened On",
+  "value" : "23rd August 2024",
+  "iconName" : "mdi:calendar-month",
+  "iconColor" : "text-green-400",
+  "bgColor" : "",
+  "textOrientation" : "flex-row",
+  "textColor" : "text-black"
+},
+{
+  "title" : "Current Status",
+  "value" : "Pending At RM Level",
+  "iconName" : "mdi:form",
+  "iconColor" : "text-red-400",
+  "bgColor" : "",
+  "textOrientation" : "flex-row",
+  "textColor" : "text-black"
+},
+]
+const {data} = Astro.props;
+---
+<div class="grid grid-cols-[200px_1fr_200px] gap-2">
+    <div class="flex flex-col p-2">
+      {
+        applicationData.map((app, index) => (
+            <InformationCard
+                key={index}
+                title={app.title}
+                value={app.value}
+                iconName={app.iconName}
+                iconColor={app.iconColor}
+                bgColor={app.bgColor}
+                textOrientation={app.textOrientation}
+                textColor={app.textColor}
+            />
+        ))
+      }
+
+    </div>
+    <div>
+      {
+        data.map((dem, index) => (
+            <DisplayCard
+                key={index}
+                title={dem.title}
+                content={dem.content}
+            />
+        ))
+    }
+    </div>
+    
+    <div class="flex flex-col gap-2">
+      <span class="btn btn-warning">Update</span>
+      <span class="btn btn-error">Delete</span>
+    </div>
+</div>
